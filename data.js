@@ -498,7 +498,8 @@ const courseData = [
                 `
             }
         ]
-    },{
+    },
+    {
         category: "11. Marketing and Advertising",
         situations: [
             { 
@@ -997,7 +998,8 @@ const courseData = [
                 `
             }
         ]
-    },{
+    },
+    {
         category: "21. Training and Learning New Skills",
         situations: [
             { 
@@ -1290,7 +1292,7 @@ const courseData = [
                     <p class="line"><span class="speaker-A">Manager:</span> You cannot be on the factory floor without them.</p>
                     <p class="line"><span class="speaker-B">Worker:</span> I will go back and get them right now.</p>
                     <p class="line"><span class="speaker-A">Manager:</span> Thank you. We want everyone to be safe here.</p>
-                    <p class="line"><span class="speaker-B">Worker:</span> I understand. I won't forget them again.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I understand. I won't <span class="vocab" data-tr="unutmak">forget</span> them again.</p>
                     <p class="line"><span class="speaker-A">Manager:</span> Also, make sure your shoes are <span class="vocab" data-tr="kapalı">closed</span> at the front.</p>
                     <p class="line"><span class="speaker-B">Worker:</span> Yes, these are my special <span class="vocab" data-tr="ağır">heavy</span> work shoes.</p>
                 `
