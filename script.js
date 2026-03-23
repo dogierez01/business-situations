@@ -11,7 +11,7 @@ const nowPlayingTitle = document.getElementById('now-playing-title');
 const transcriptBox = document.getElementById('transcript-box');
 const popup = document.getElementById('translation-popup');
 
-// Emojis for the 30 Categories to match the screenshot look
+// Emojis for the 30 Categories
 const categoryIcons = [
     "🤝", "🚢", "⚡", "👔", "📅", "💼", "⚖️", "⚙️", "☕", "🚨",
     "📢", "✈️", "💻", "⏳", "🖨️", "🏢", "🎤", "🎧", "📋", "🍽️",
@@ -33,21 +33,20 @@ document.getElementById('btn-enter').addEventListener('click', () => {
 document.getElementById('btn-back-lobby').addEventListener('click', () => {
     playerZone.classList.add('hidden');
     lobbyScreen.classList.remove('hidden');
-    audioPlayer.pause(); // Automatically pauses the audio if they leave the page early
+    audioPlayer.pause(); 
 });
 
 // --- 1. Build the Category Grid ---
 function buildCategoryGrid() {
     const container = document.getElementById('lobby-container');
     container.innerHTML = ''; 
-    container.className = 'category-grid'; // Apply Grid Layout
+    container.className = 'category-grid'; 
     document.getElementById('app-title').innerText = "Business Situations";
 
     courseData.forEach((section, index) => {
         const card = document.createElement('div');
         card.className = 'category-card';
         
-        // Grab the matching icon, or use a default if we run out
         const icon = categoryIcons[index] || "📁";
 
         card.innerHTML = `
@@ -66,7 +65,7 @@ function buildCategoryGrid() {
 // --- 2. Show Situations List (Drill-down) ---
 function showSituationsList(section) {
     const container = document.getElementById('lobby-container');
-    container.className = ''; // Remove grid layout for the list
+    container.className = ''; 
     
     document.getElementById('app-title').innerText = section.category;
 
@@ -87,17 +86,29 @@ function showSituationsList(section) {
     });
 }
 
-// --- 3. Load the Player (With Autoplay!) ---
+// --- 3. Load the Player (With Bulletproof Autoplay) ---
 function loadLesson(sit) {
     lobbyScreen.classList.add('hidden');
     playerZone.classList.remove('hidden');
 
     nowPlayingTitle.innerText = `Situation ${sit.id}: ${sit.title}`;
     
-    // Load audio, force 1.2x speed, and PLAY AUTOMATICALLY
+    // Set the source and playback speed
     audioPlayer.src = sit.audioFile;
     audioPlayer.playbackRate = 1.2; 
-    audioPlayer.play(); 
+    
+    // Force the browser to grab the file
+    audioPlayer.load();
+
+    // WAIT for the browser to say "I have downloaded enough to play without buffering"
+    audioPlayer.oncanplay = function() {
+        // Now hit play!
+        audioPlayer.play().catch(error => {
+            console.log("Browser safety settings blocked autoplay:", error);
+        });
+        // Clear this event so it doesn't fire twice
+        audioPlayer.oncanplay = null; 
+    };
     
     transcriptBox.innerHTML = sit.dialogue;
 
