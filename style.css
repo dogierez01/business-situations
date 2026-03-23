@@ -1,10 +1,12 @@
-/* Light Mode & Modern App Aesthetic */
+/* Pure Black Dark Mode Aesthetic */
 :root {
-    --bg-color: #f5f7fb;
-    --text-main: #1e293b;
-    --primary: #4f46e5; /* The purple/indigo color from your screenshot */
-    --primary-hover: #4338ca;
-    --card-bg: #ffffff;
+    --bg-color: #000000;          /* Pure black background */
+    --card-bg: #121212;           /* Deep dark gray for cards */
+    --text-main: #f8fafc;         /* Bright white text */
+    --text-muted: #94a3b8;        /* Muted gray for subtitles */
+    --primary: #818cf8;           /* Vibrant indigo for buttons/accents */
+    --primary-hover: #6366f1;
+    --border-color: #27272a;      /* Subtle dark borders */
 }
 
 body {
@@ -34,12 +36,16 @@ img { max-width: 100%; max-height: 40vh; object-fit: contain; margin-bottom: 30p
     padding: 15px 40px; font-size: 1.1rem; font-weight: bold;
     border-radius: 12px; cursor: pointer; transition: 0.2s;
     width: 100%; max-width: 300px; display: block; margin: 0 auto;
-    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+    box-shadow: 0 4px 15px rgba(129, 140, 248, 0.2);
 }
-.action-btn-large:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
+.action-btn-large:hover { 
+    background-color: var(--primary-hover); 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 20px rgba(129, 140, 248, 0.4);
+}
 
 /* Headers */
-#app-title { color: var(--primary); font-size: 32px; font-weight: 800; margin-bottom: 30px; text-align: center; }
+#app-title { color: var(--text-main); font-size: 32px; font-weight: 800; margin-bottom: 30px; text-align: center; }
 #now-playing-title { color: var(--primary); font-size: 24px; margin-bottom: 20px; line-height: 1.3; text-align: center;}
 
 /* Category Grid Layout */
@@ -50,7 +56,7 @@ img { max-width: 100%; max-height: 40vh; object-fit: contain; margin-bottom: 30p
     width: 100%;
 }
 
-/* The New Category Cards */
+/* The Category Cards */
 .category-card {
     background: var(--card-bg);
     border-radius: 16px;
@@ -58,16 +64,14 @@ img { max-width: 100%; max-height: 40vh; object-fit: contain; margin-bottom: 30p
     display: flex;
     align-items: center;
     gap: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, border-color 0.2s;
 }
 
 .category-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.08);
-    border-color: #cbd5e1;
+    border-color: var(--primary);
 }
 
 .card-icon {
@@ -83,12 +87,12 @@ img { max-width: 100%; max-height: 40vh; object-fit: contain; margin-bottom: 30p
 .card-title {
     font-weight: 800;
     font-size: 1rem;
-    color: #0f172a;
+    color: var(--text-main);
 }
 
 .card-subtitle {
     font-size: 0.75rem;
-    color: #64748b;
+    color: var(--text-muted);
     margin-top: 4px;
     font-weight: 600;
 }
@@ -105,8 +109,8 @@ img { max-width: 100%; max-height: 40vh; object-fit: contain; margin-bottom: 30p
 
 .situation-btn {
     background: var(--card-bg);
-    border: 1px solid #cbd5e1;
-    color: #1e293b;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
     padding: 18px;
     text-align: left;
     border-radius: 12px;
@@ -114,33 +118,35 @@ img { max-width: 100%; max-height: 40vh; object-fit: contain; margin-bottom: 30p
     font-size: 1.1rem;
     font-weight: bold;
     transition: 0.2s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
 }
 .situation-btn:hover { border-color: var(--primary); color: var(--primary); }
 
 .back-to-cats {
-    background: transparent; color: #64748b; border: none; font-weight: bold; font-size: 1rem; cursor: pointer; margin-bottom: 20px; text-decoration: underline;
+    background: transparent; color: var(--text-muted); border: none; font-weight: bold; font-size: 1rem; cursor: pointer; margin-bottom: 20px; text-decoration: underline;
 }
 .back-to-cats:hover { color: var(--text-main); }
 
 /* Dialogue Box */
 .dialogue-box {
     background: var(--card-bg); padding: 30px; border-radius: 16px;
-    border: 1px solid #e2e8f0; text-align: left; margin-top: 20px;
-    font-size: 1.15rem; line-height: 1.6; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid var(--border-color); text-align: left; margin-top: 20px;
+    font-size: 1.15rem; line-height: 1.6;
 }
+
+/* Character Colors inside Dialogue */
 .speaker-A { color: var(--primary); font-weight: bold; }
-.speaker-B { color: #0f172a; font-weight: bold; }
+.speaker-B { color: #38bdf8; font-weight: bold; } /* Bright light blue for contrast */
 
 /* Interactive Dictionary */
-.vocab { color: #ea580c; border-bottom: 2px dotted #ea580c; cursor: pointer; font-weight: bold; padding: 0 2px;}
-.vocab:hover { background-color: #ffedd5; }
+.vocab { color: #fbbf24; border-bottom: 2px dotted #fbbf24; cursor: pointer; font-weight: bold; padding: 0 2px;}
+.vocab:hover { background-color: rgba(251, 191, 36, 0.1); }
 
+/* Tooltip Popup */
 #translation-popup {
-    position: absolute; background: #1e293b; color: #ffffff; padding: 10px 15px;
+    position: absolute; background: #ffffff; color: #000000; padding: 10px 15px;
     border-radius: 8px; font-size: 1rem; pointer-events: none; opacity: 0;
     transition: 0.2s; transform: translateY(10px); z-index: 1000; font-weight: bold;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 #translation-popup.visible { opacity: 1; transform: translateY(0); }
-.tr-color { color: #fbbf24; margin-left: 8px; }
+.tr-color { color: #dc2626; margin-left: 8px; }
