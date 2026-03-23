@@ -5,481 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Situations</title>
     <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8fafc;
-            color: #1e293b;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin: 0; padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex; flex-direction: column; align-items: center;
             min-height: 100vh;
         }
 
-        .page-section {
+        .screen {
             display: none; 
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            width: 100%;
-            max-width: 1000px;
+            flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 40px 20px;
+            width: 100%; max-width: 800px; box-sizing: border-box;
             min-height: 80vh;
-            box-sizing: border-box;
         }
 
-        .active {
-            display: flex;
-        }
+        .active { display: flex; }
 
-        .logo {
-            max-width: 100%;
-            max-height: 30vh;
-            object-fit: contain;
-            margin-bottom: 40px;
-        }
+        img { max-width: 100%; max-height: 40vh; object-fit: contain; margin-bottom: 30px; }
 
-        .instructions {
-            max-width: 100%;
-            max-height: 60vh;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
+        .action-btn {
+            background-color: var(--primary); color: white;
+            border: none; padding: 15px 40px; font-size: 1.2rem; font-weight: bold;
+            border-radius: 8px; cursor: pointer; transition: 0.2s;
+            margin-bottom: 20px;
         }
+        .action-btn:hover { background-color: var(--primary-hover); }
 
-        .btn-main {
-            background-color: #2563eb;
-            color: white;
-            border: none;
-            padding: 15px 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.1s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+        /* Lobby Accordion Styles */
+        #lobby-container { width: 100%; text-align: left; }
+        .category-block { background: white; border-radius: 8px; margin-bottom: 12px; border: 1px solid #e2e8f0; }
+        .category-block summary { padding: 18px; font-size: 1.2rem; font-weight: bold; cursor: pointer; background: #f1f5f9; list-style: none; }
+        .category-content { padding: 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+        .situation-card { background: #f8fafc; padding: 15px; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; }
+        .situation-card:hover { border-color: var(--primary); background: #eff6ff; }
 
-        .btn-main:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-        }
-
-        /* --- Accordion Category Styles --- */
-        .lobby-header { margin-bottom: 30px; }
+        /* Player Zone Styles */
+        .audio-card, .dialogue-card { background: white; border-radius: 12px; padding: 30px; border: 1px solid #e2e8f0; width: 100%; margin-bottom: 20px; text-align: left;}
+        audio { width: 100%; margin-top: 15px; }
         
-        #lobby-container {
-            width: 100%;
-            max-width: 800px;
-            text-align: left;
-        }
+        .line { margin-bottom: 15px; font-size: 1.15rem; line-height: 1.6;}
+        .speaker-A { color: #0f172a; font-weight: bold; }
+        .speaker-B { color: #334155; font-weight: bold; }
 
-        .category-block {
-            background-color: #ffffff;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-            overflow: hidden;
+        /* Dictionary Tooltip */
+        .vocab { color: var(--primary); border-bottom: 2px dotted var(--primary); cursor: pointer; font-weight: 600; padding: 0 2px; }
+        .vocab:hover { background-color: #dbeafe; }
+        
+        #translation-popup {
+            position: absolute; background: #1e293b; color: white; padding: 8px 12px;
+            border-radius: 6px; font-size: 1rem; pointer-events: none; opacity: 0;
+            transition: 0.2s; transform: translateY(10px); z-index: 1000; font-weight: bold;
         }
-
-        .category-block summary {
-            padding: 18px 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #0f172a;
-            cursor: pointer;
-            background-color: #f1f5f9;
-            transition: background-color 0.2s;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .category-block summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .category-block summary:after {
-            content: "+";
-            font-size: 1.5rem;
-            color: #2563eb;
-        }
-
-        .category-block[open] summary:after {
-            content: "−";
-        }
-
-        .category-block summary:hover {
-            background-color: #e2e8f0;
-        }
-
-        .category-content {
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-            background-color: #ffffff;
-        }
-
-        .situation-card {
-            background-color: #f8fafc;
-            border-radius: 6px;
-            padding: 15px;
-            text-decoration: none;
-            color: inherit;
-            border: 1px solid #cbd5e1;
-            transition: transform 0.2s, border-color 0.2s;
-            display: block;
-        }
-
-        .situation-card:hover {
-            transform: translateY(-3px);
-            border-color: #2563eb;
-            background-color: #eff6ff;
-        }
-
-        .situation-number {
-            font-size: 0.8rem;
-            color: #64748b;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .situation-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #1e293b;
-        }
+        #translation-popup.visible { opacity: 1; transform: translateY(0); }
+        .tr-color { color: #fbbf24; margin-left: 5px; }
     </style>
 </head>
 <body>
 
-    <div id="opening-page" class="page-section active">
-        <img src="logo.png" alt="App Logo" class="logo">
-        <button class="btn-main" onclick="showInstructions()">Go</button>
+    <div id="splash-screen" class="screen active">
+        <img src="logo.png" alt="App Logo">
+        <button id="btn-start" class="action-btn">Go</button>
     </div>
 
-    <div id="instructions-page" class="page-section">
-        <img src="instructions.png" alt="How to use this app" class="instructions">
-        <button class="btn-main" onclick="enterLobby()">Go to Lobby</button>
+    <div id="instructions-screen" class="screen">
+        <img src="instructions.jpg" alt="Instructions">
+        <button id="btn-enter" class="action-btn">Go to Lobby</button>
     </div>
 
-    <div id="lobby-page" class="page-section">
-        <div class="lobby-header">
-            <h2>Business Situations Lobby</h2>
-            <p>Select a category below to view the scenarios.</p>
-        </div>
+    <div id="lobby-screen" class="screen">
+        <h2>Business Situations Lobby</h2>
         <div id="lobby-container"></div>
     </div>
 
-    <script>
-        console.log("Script 1: Navigation loading...");
+    <div id="player-zone" class="screen">
+        <button id="btn-back" class="action-btn" style="align-self: flex-start; padding: 10px 20px; font-size: 1rem;">← Back to Lobby</button>
+        
+        <div class="audio-card">
+            <h3 id="lesson-title" style="margin-top:0;">Lesson Title Here</h3>
+            <audio id="audio-player" controls></audio>
+        </div>
 
-        function showInstructions() {
-            document.getElementById('opening-page').classList.remove('active');
-            document.getElementById('instructions-page').classList.add('active');
-        }
+        <div class="dialogue-card" id="transcript-box">
+            </div>
+    </div>
 
-        function enterLobby() {
-            document.getElementById('instructions-page').classList.remove('active');
-            document.getElementById('lobby-page').classList.add('active');
-            
-            // Check if Script 2 survived before trying to run it
-            if (typeof renderLobby === 'function') {
-                renderLobby();
-            } else {
-                console.error("The data script crashed. Showing error message to user.");
-                document.getElementById('lobby-container').innerHTML = 
-                    "<div style='color: #dc2626; background: #fee2e2; padding: 20px; border-radius: 8px; font-weight: bold;'>" +
-                    "Error: The scenario data failed to load. Please check the Developer Console for syntax errors in the array." +
-                    "</div>";
-            }
-        }
-    </script>
+    <div id="translation-popup"></div>
 
-    <script>
-        console.log("Script 2: Data loading...");
-
-        const lobbyData = [
-            {
-                category: "Human Resources (HR)",
-                situations: [
-                    { id: 1, title: "Asking for a Raise", file: "01_Human_Resources_HR_Asking_for_a_Raise.html" },
-                    { id: 2, title: "The First Day on the Job", file: "02_Human_Resources_HR_The_First_Day_on_the_Job.html" }
-                ]
-            },
-            {
-                category: "Import / Export",
-                situations: [
-                    { id: 3, title: "Leaving the Company", file: "03_Import_Export_Leaving_the_Company.html" },
-                    { id: 4, title: "Problem at Customs", file: "04_Import_Export_Problem_at_Customs.html" },
-                    { id: 5, title: "Buying Materials", file: "05_Import_Export_Buying_Materials.html" }
-                ]
-            },
-            {
-                category: "Work Conflicts (Problems at Work)",
-                situations: [
-                    { id: 6, title: "Strict Boss", file: "06_Work_Conflicts_Problems_at_Work_Strict_Boss.html" },
-                    { id: 7, title: "Tardiness", file: "07_Work_Conflicts_Problems_at_Work_Tardiness.html" },
-                    { id: 8, title: "A Lazy Coworker", file: "08_Work_Conflicts_Problems_at_Work_A_Lazy_Coworker.html" }
-                ]
-            },
-            {
-                category: "Job Interviews",
-                situations: [
-                    { id: 9, title: "Sharing the Work Week", file: "09_Job_Interviews_Sharing_the_Work_Week.html" },
-                    { id: 10, title: "Meeting the Manager", file: "10_Job_Interviews_Meeting_the_Manager_in_Person.html" },
-                    { id: 11, title: "Talking about Skills", file: "11_Job_Interviews_Talking_about_Skills.html" }
-                ]
-            },
-            {
-                category: "Day-to-Day Meetings & Planning",
-                situations: [
-                    { id: 12, title: "Planning Session 1", file: "12_Day-to-Day_Meetings_A_Planning_Session_1.html" },
-                    { id: 13, title: "Planning Session 2", file: "13_Day-to-Day_Meetings_A_Planning_Session_2.html" },
-                    { id: 14, title: "Planning Session 3", file: "14_Day-to-Day_Meetings_A_Planning_Session_3.html" }
-                ]
-            },
-            {
-                category: "Sales & Client Relations",
-                situations: [
-                    { id: 15, title: "Project Deadline", file: "15_Sales_&_Client_Relations_Project_Deadline.html" },
-                    { id: 16, title: "Pending a Deal", file: "16_Sales_&_Client_Relations_Pending_a_Deal.html" },
-                    { id: 17, title: "Closing a Deal", file: "17_Sales_&_Client_Relations_Closing_a_Deal.html" }
-                ]
-            },
-            {
-                category: "Finance & Legal",
-                situations: [
-                    { id: 18, title: "Asking for a Budget Increase", file: "18_Finance_&_Legal_Asking_for_a_Budget_Increase.html" },
-                    { id: 19, title: "Contract Review", file: "19_Finance_&_Legal_Contract_Review.html" }
-                ]
-            },
-            {
-                category: "Operations & Quality Control",
-                situations: [
-                    { id: 20, title: "An Office Visit", file: "20_Operations_&_Quality_Control_An_Office_Visit.html" },
-                    { id: 21, title: "A Broken Machine", file: "21_Operations_&_Quality_Control_A_Broken_Machine.html" },
-                    { id: 22, title: "Checking Inventory", file: "22_Operations_&_Quality_Control_Checking_Inventory.html" }
-                ]
-            },
-            {
-                category: "Networking & Office Chat",
-                situations: [
-                    { id: 23, title: "Talking about the Weekend", file: "23_Networking_&_Office_Chat_Talking_about_the_Weekend.html" },
-                    { id: 24, title: "Meeting at the Cooler", file: "24_Networking_&_Office_Chat_Meeting_at_the_Cooler.html" },
-                    { id: 25, title: "Talking about Sports", file: "25_Networking_&_Office_Chat_Talking_about_Sports.html" }
-                ]
-            },
-            {
-                category: "Crisis and Big Changes",
-                situations: [
-                    { id: 26, title: "Welcoming a New Boss", file: "26_Crisis_and_Big_Changes_Welcoming_a_New_Boss.html" },
-                    { id: 27, title: "A Bad Review", file: "27_Crisis_and_Big_Changes_A_Bad_Review.html" },
-                    { id: 28, title: "Moving To a New Office", file: "28_Crisis_and_Big_Changes_Moving_To_a_New_Office.html" },
-                    { id: 29, title: "A Computer Problem", file: "29_Crisis_and_Big_Changes_A_Computer_Problem.html" }
-                ]
-            },
-            {
-                category: "Marketing and Advertising",
-                situations: [
-                    { id: 30, title: "Planning an Ad Campaign", file: "30_Marketing_and_Advertising_Planning_an_Ad_Campaign.html" },
-                    { id: 31, title: "Target Audience", file: "31_Marketing_and_Advertising_Talking_about_Target_Audience.html" }
-                ]
-            },
-            {
-                category: "Business Travel",
-                situations: [
-                    { id: 32, title: "A New Product Release", file: "32_Business_Travel_A_New_Product_Release.html" },
-                    { id: 33, title: "Booking a Flight", file: "33_Business_Travel_Booking_a_Flight.html" },
-                    { id: 34, title: "Checking Into a Hotel", file: "34_Business_Travel_Checking_Into_a_Hotel.html" }
-                ]
-            },
-            {
-                category: "Technology and Software Support",
-                situations: [
-                    { id: 35, title: "Taking a Course", file: "35_Technology_and_Software_Support_Taking_a_Course.html" },
-                    { id: 36, title: "A Network Problem", file: "36_Technology_and_Software_Support_A_Problem_with_the_Network.html" },
-                    { id: 37, title: "Learning New Software", file: "37_Technology_and_Software_Support_Learning_New_Software.html" }
-                ]
-            },
-            {
-                category: "Time Management & Deadlines",
-                situations: [
-                    { id: 38, title: "Buying Time", file: "38_Time_Management_&_Deadlines_Buying_Time.html" },
-                    { id: 39, title: "Task Delegation", file: "39_Time_Management_&_Deadlines_A_Task_Delegation.html" },
-                    { id: 40, title: "Asking for an Extension", file: "40_Time_Management_&_Deadlines_Asking_for_an_Extension.html" }
-                ]
-            },
-            {
-                category: "Office Facilities & Supplies",
-                situations: [
-                    { id: 41, title: "Ordering Supplies 1", file: "41_Office_Facilities_&_Supplies_Ordering_Office_Supplies_1.html" },
-                    { id: 42, title: "Ordering Supplies 2", file: "42_Office_Facilities_&_Supplies_Ordering_Office_Supplies_2.html" },
-                    { id: 43, title: "A Cold Office", file: "43_Office_Facilities_&_Supplies_A_Cold_Office.html" }
-                ]
-            },
-            {
-                category: "Travel Directions & Branch Offices",
-                situations: [
-                    { id: 44, title: "To the Branch", file: "44_Travel_Directions_&_Branch_Offices_To_the_Branch.html" },
-                    { id: 45, title: "Visiting the Branch", file: "45_Travel_Directions_&_Branch_Offices_Visiting_the_Branch.html" }
-                ]
-            },
-            {
-                category: "Presentations and Public Speaking",
-                situations: [
-                    { id: 46, title: "Delivering a Speech 1", file: "46_Presentations_and_Public_Speaking_Delivering_a_Speech_1.html" },
-                    { id: 47, title: "Delivering a Speech 2", file: "47_Presentations_and_Public_Speaking_Delivering_a_Speech_2.html" },
-                    { id: 48, title: "Delivering a Speech 3", file: "48_Presentations_and_Public_Speaking_Delivering_a_Speech_3.html" }
-                ]
-            },
-            {
-                category: "Customer Support and Problems",
-                situations: [
-                    { id: 49, title: "Assisting a Customer", file: "49_Customer_Support_and_Problems_Assisting_a_Customer.html" },
-                    { id: 50, title: "Missing Items", file: "50_Customer_Support_and_Problems_Missing_Items.html" },
-                    { id: 51, title: "A Delayed Shipment", file: "51_Customer_Support_and_Problems_A_Delayed_Shipment.html" }
-                ]
-            },
-            {
-                category: "Company Rules and Time Off",
-                situations: [
-                    { id: 52, title: "Calling In Sick", file: "52_Company_Roles_and_Titles_Off_Calling_In_Sick.html" },
-                    { id: 53, title: "HR Onboarding", file: "53_Company_Roles_and_Titles_HR_Onboarding_1.html" },
-                    { id: 54, title: "Asking for a Raise", file: "54_Company_Roles_and_Titles_HR_Asking_for_a_Raise.html" }
-                ]
-            },
-            {
-                category: "Business Dinners and Entertainment",
-                situations: [
-                    { id: 55, title: "Entertainment", file: "55_Business_Dinners_and_Entertainment_Entertainment.html" },
-                    { id: 56, title: "Talking Business", file: "56_Business_Dinners_and_Entertainment_Talking_Business.html" },
-                    { id: 57, title: "Lunch Meeting", file: "57_Business_Dinners_and_Entertainment_Lunch_Meeting.html" },
-                    { id: 58, title: "Talking to Clients", file: "58_Business_Dinners_and_Entertainment_Talking_to_Clients.html" }
-                ]
-            },
-            {
-                category: "Training and Learning New Skills",
-                situations: [
-                    { id: 59, title: "A New Skill", file: "59_Training_and_Learning_New_Skills_A_New_Skill.html" },
-                    { id: 60, title: "Training Session", file: "60_Training_and_Learning_New_Skills_Training_Session.html" }
-                ]
-            },
-            {
-                category: "International Business & Expansion",
-                situations: [
-                    { id: 61, title: "Expansion Details 1", file: "61_International_Business_&_Expansion_Details_1.html" },
-                    { id: 62, title: "Expansion Details 2", file: "62_International_Business_&_Expansion_Details_2.html" },
-                    { id: 63, title: "Expansion Costs", file: "63_International_Business_&_Expansion_Costs.html" }
-                ]
-            },
-            {
-                category: "Job Promotions and Career Goals",
-                situations: [
-                    { id: 64, title: "Dream Job", file: "64_Job_Promotions_and_Career_Goals_Dream_Job.html" },
-                    { id: 65, title: "Asking for Promotion", file: "65_Job_Promotions_and_Career_Goals_Asking_for_Promotion.html" },
-                    { id: 66, title: "Setting Goals", file: "66_Job_Promotions_and_Career_Goals_Setting_Goals.html" }
-                ]
-            },
-            {
-                category: "Team Building and Company Culture",
-                situations: [
-                    { id: 67, title: "Culture Activity", file: "67_Team_Building_and_Company_Culture_Activity.html" },
-                    { id: 68, title: "Culture Feedback", file: "68_Team_Building_and_Company_Culture_Feedback.html" },
-                    { id: 69, title: "Culture Announcement", file: "69_Team_Building_and_Company_Culture_Announcement.html" }
-                ]
-            },
-            {
-                category: "Office Technology and Security",
-                situations: [
-                    { id: 70, title: "A Computer Issue", file: "70_Office_Technology_and_Security_A_Computer_Issue.html" },
-                    { id: 71, title: "A Leak", file: "71_Office_Technology_and_Security_A_Leak.html" },
-                    { id: 72, title: "Suspicious Email", file: "72_Office_Technology_and_Security_Suspicious_Email.html" }
-                ]
-            },
-            {
-                category: "Factory and Production",
-                situations: [
-                    { id: 73, title: "Setting up Machines", file: "73_Factory_and_Production_Setting_up_Machines.html" },
-                    { id: 74, title: "Meeting Goals", file: "74_Factory_and_Production_Meeting_Production_Goals.html" },
-                    { id: 75, title: "Ordering New Parts", file: "75_Factory_and_Production_Ordering_New_Parts.html" }
-                ]
-            },
-            {
-                category: "Event Planning and Conferences",
-                situations: [
-                    { id: 76, title: "Planning", file: "76_Event_Planning_and_Conferences_Planning.html" },
-                    { id: 77, title: "Hosting", file: "77_Event_Planning_and_Conferences_Hosting.html" },
-                    { id: 78, title: "Booking", file: "78_Event_Planning_and_Conferences_Booking.html" }
-                ]
-            },
-            {
-                category: "Designing New Products",
-                situations: [
-                    { id: 79, title: "Sending Feedback", file: "79_Designing_New_Products_Sending_Feedback.html" },
-                    { id: 80, title: "Looking at a Model", file: "80_Designing_New_Products_Looking_at_a_Model.html" },
-                    { id: 81, title: "Testing a Product", file: "81_Designing_New_Products_Testing_a_Product.html" }
-                ]
-            },
-            {
-                category: "Managing Projects",
-                situations: [
-                    { id: 82, title: "Meeting Deadlines", file: "82_Managing_Projects_Meeting_Deadlines_1.html" },
-                    { id: 83, title: "Checking the Timeline", file: "83_Managing_Projects_Checking_the_Timeline.html" },
-                    { id: 84, title: "Breaking the Production Line", file: "84_Managing_Projects_Breaking_the_Production_Line.html" }
-                ]
-            },
-            {
-                category: "Working with Lawyers and Contracts",
-                situations: [
-                    { id: 85, title: "Signing", file: "85_Working_with_Lawyers_and_Contracts_Signing.html" },
-                    { id: 86, title: "Signing 2", file: "86_Working_with_Lawyers_and_Contracts_Signing_2.html" },
-                    { id: 87, title: "Clauses", file: "87_Working_with_Lawyers_and_Contracts_Clauses.html" },
-                    { id: 88, title: "Problems", file: "88_Working_with_Lawyers_and_Contracts_Problems.html" },
-                    { id: 89, title: "Problems 2", file: "89_Working_with_Lawyers_and_Contracts_Problems_2.html" },
-                    { id: 90, title: "Signing 3", file: "90_Working_with_Lawyers_and_Contracts_Signing_3.html" }
-                ]
-            }
-        ];
-
-        function renderLobby() {
-            const container = document.getElementById('lobby-container');
-            container.innerHTML = ''; 
-
-            lobbyData.forEach(section => {
-                const details = document.createElement('details');
-                details.className = 'category-block';
-                
-                const summary = document.createElement('summary');
-                summary.innerText = section.category;
-                details.appendChild(summary);
-
-                const contentDiv = document.createElement('div');
-                contentDiv.className = 'category-content';
-
-                section.situations.forEach(situation => {
-                    const card = document.createElement('a');
-                    card.className = 'situation-card';
-                    card.href = situation.file; 
-                    
-                    card.innerHTML = `
-                        <div class="situation-number">Situation ${situation.id}</div>
-                        <div class="situation-title">${situation.title}</div>
-                    `;
-                    
-                    contentDiv.appendChild(card);
-                });
-
-                details.appendChild(contentDiv);
-                container.appendChild(details);
-            });
-        }
-    </script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
