@@ -17,9 +17,8 @@
             min-height: 100vh;
         }
 
-        /* This controls the display of our different "screens" */
         .page-section {
-            display: none; /* Hides everything by default */
+            display: none; 
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -28,22 +27,24 @@
             width: 100%;
             max-width: 800px;
             min-height: 80vh;
+            box-sizing: border-box;
         }
 
-        /* The active class makes the current screen visible */
         .active {
             display: flex;
         }
 
         .logo {
-            max-width: 250px;
-            height: auto;
+            max-width: 100%;
+            max-height: 30vh; /* Prevents the logo from taking up too much vertical space */
+            object-fit: contain; /* Ensures the whole image stays visible */
             margin-bottom: 40px;
         }
 
         .instructions {
             max-width: 100%;
-            height: auto;
+            max-height: 60vh; /* Ensures the instructions fit on screen without scrolling */
+            object-fit: contain;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             margin-bottom: 40px;
@@ -71,7 +72,6 @@
             transform: translateY(0);
         }
         
-        /* Basic Lobby Styles for our next step */
         .lobby-header { margin-bottom: 20px; }
     </style>
 </head>
@@ -83,7 +83,7 @@
     </div>
 
     <div id="instructions-page" class="page-section">
-        <img src="instructions.jpg" alt="How to use this app" class="instructions">
+        <img src="instructions.png" alt="How to use this app" class="instructions">
         <button class="btn-main" onclick="enterLobby()">Go to Lobby</button>
     </div>
 
@@ -97,19 +97,14 @@
 
     <script>
         function showInstructions() {
-            // Hide the opening page
             document.getElementById('opening-page').classList.remove('active');
-            // Show the instructions page
             document.getElementById('instructions-page').classList.add('active');
         }
 
         function enterLobby() {
-            // Hide the instructions page
             document.getElementById('instructions-page').classList.remove('active');
-            // Show the lobby page
             document.getElementById('lobby-page').classList.add('active');
             
-            // Temporary alert so you know the button works before we build the grid
             alert('Lobby transition successful! Ready to build the grid.');
         }
     </script>
