@@ -25,7 +25,7 @@
             text-align: center;
             padding: 40px 20px;
             width: 100%;
-            max-width: 800px;
+            max-width: 1000px; /* Widened slightly for the grid */
             min-height: 80vh;
             box-sizing: border-box;
         }
@@ -36,14 +36,14 @@
 
         .logo {
             max-width: 100%;
-            max-height: 30vh; /* Prevents the logo from taking up too much vertical space */
-            object-fit: contain; /* Ensures the whole image stays visible */
+            max-height: 30vh;
+            object-fit: contain;
             margin-bottom: 40px;
         }
 
         .instructions {
             max-width: 100%;
-            max-height: 60vh; /* Ensures the instructions fit on screen without scrolling */
+            max-height: 60vh;
             object-fit: contain;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -68,11 +68,49 @@
             transform: translateY(-2px);
         }
 
-        .btn-main:active {
-            transform: translateY(0);
-        }
+        /* --- New Grid CSS --- */
+        .lobby-header { margin-bottom: 30px; }
         
-        .lobby-header { margin-bottom: 20px; }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .situation-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #e2e8f0;
+            text-decoration: none; /* For the link */
+            color: inherit;
+            display: block;
+        }
+
+        .situation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            border-color: #2563eb;
+        }
+
+        .situation-number {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .situation-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #1e293b;
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
@@ -90,9 +128,9 @@
     <div id="lobby-page" class="page-section">
         <div class="lobby-header">
             <h2>Business Situations Lobby</h2>
-            <p>Select a scenario below.</p>
+            <p>Select a scenario below to begin your lesson.</p>
         </div>
-        <div id="grid-container"></div>
+        <div class="grid-container" id="grid-container"></div>
     </div>
 
     <script>
@@ -104,8 +142,67 @@
         function enterLobby() {
             document.getElementById('instructions-page').classList.remove('active');
             document.getElementById('lobby-page').classList.add('active');
-            
-            alert('Lobby transition successful! Ready to build the grid.');
+            renderLobby(); // Call the function to build the grid
+        }
+
+        // Array of your business situations (Files 55 through 90)
+        // IMPORTANT: Ensure the 'file' name matches your GitHub repo exactly!
+        const situations = [
+            { id: 55, title: "Company Roles and Titles: HR Onboarding 1", file: "55_Company_Roles_and_Titles_HR_Onboarding.html" },
+            { id: 56, title: "Company Roles and Titles: HR Onboarding 2", file: "56_Company_Roles_and_Titles_HR_Onboarding.html" },
+            { id: 57, title: "Business Dinners and Entertainment 1", file: "57_Business_Dinners_and_Entertainment.html" },
+            { id: 58, title: "Business Dinners and Entertainment 2", file: "58_Business_Dinners_and_Entertainment.html" },
+            { id: 59, title: "Business Dinners and Entertainment 3", file: "59_Business_Dinners_and_Entertainment.html" },
+            { id: 60, title: "Training and Learning New Skills 1", file: "60_Training_and_Learning_New_Skills.html" },
+            { id: 61, title: "Training and Learning New Skills 2", file: "61_Training_and_Learning_New_Skills.html" },
+            { id: 62, title: "International Business & Expansion 1", file: "62_International_Business_&_Expansion.html" },
+            { id: 63, title: "International Business & Expansion 2", file: "63_International_Business_&_Expansion.html" },
+            { id: 64, title: "Job Promotions and Career Goals 1", file: "64_Job_Promotions_and_Career_Goals.html" },
+            { id: 65, title: "Job Promotions and Career Goals 2", file: "65_Job_Promotions_and_Career_Goals.html" },
+            { id: 66, title: "Job Promotions and Career Goals 3", file: "66_Job_Promotions_and_Career_Goals.html" },
+            { id: 67, title: "Team Building and Company Culture 1", file: "67_Team_Building_and_Company_Culture.html" },
+            { id: 68, title: "Team Building and Company Culture 2", file: "68_Team_Building_and_Company_Culture.html" },
+            { id: 69, title: "Team Building and Company Culture 3", file: "69_Team_Building_and_Company_Culture.html" },
+            { id: 70, title: "Office Technology and Security 1", file: "70_Office_Technology_and_Security.html" },
+            { id: 71, title: "Office Technology and Security 2", file: "71_Office_Technology_and_Security.html" },
+            { id: 72, title: "Office Technology and Security 3", file: "72_Office_Technology_and_Security.html" },
+            { id: 73, title: "Factory and Production: Setting up 1", file: "73_Factory_and_Production_Setting_up.html" },
+            { id: 74, title: "Factory and Production: Setting up 2", file: "74_Factory_and_Production_Setting_up.html" },
+            { id: 75, title: "Factory and Production: Setting up 3", file: "75_Factory_and_Production_Setting_up.html" },
+            { id: 76, title: "Event Planning and Conferences 1", file: "76_Event_Planning_and_Conferences.html" },
+            { id: 77, title: "Event Planning and Conferences 2", file: "77_Event_Planning_and_Conferences.html" },
+            { id: 78, title: "Event Planning and Conferences 3", file: "78_Event_Planning_and_Conferences.html" },
+            { id: 79, title: "Designing New Products 1", file: "79_Designing_New_Products.html" },
+            { id: 80, title: "Designing New Products 2", file: "80_Designing_New_Products.html" },
+            { id: 81, title: "Designing New Products 3", file: "81_Designing_New_Products.html" },
+            { id: 82, title: "Managing Projects: Meeting Deadlines 1", file: "82_Managing_Projects_Meeting_Deadlines.html" },
+            { id: 83, title: "Managing Projects: Meeting Deadlines 2", file: "83_Managing_Projects_Meeting_Deadlines.html" },
+            { id: 84, title: "Managing Projects: Meeting Deadlines 3", file: "84_Managing_Projects_Meeting_Deadlines.html" },
+            { id: 85, title: "Working with Lawyers and Contracts 1", file: "85_Working_with_Lawyers_and_Contracts.html" },
+            { id: 86, title: "Working with Lawyers and Contracts 2", file: "86_Working_with_Lawyers_and_Contracts.html" },
+            { id: 87, title: "Working with Lawyers and Contracts 3", file: "87_Working_with_Lawyers_and_Contracts.html" },
+            { id: 88, title: "Working with Lawyers and Contracts 4", file: "88_Working_with_Lawyers_and_Contracts.html" },
+            { id: 89, title: "Working with Lawyers and Contracts 5", file: "89_Working_with_Lawyers_and_Contracts.html" },
+            { id: 90, title: "Working with Lawyers and Contracts 6", file: "90_Working_with_Lawyers_and_Contracts.html" }
+        ];
+
+        function renderLobby() {
+            const grid = document.getElementById('grid-container');
+            grid.innerHTML = ''; // Clear just in case
+
+            situations.forEach(situation => {
+                // We use an <a> tag so it acts like a real link to your other HTML files
+                const card = document.createElement('a');
+                card.className = 'situation-card';
+                card.href = situation.file; 
+                
+                card.innerHTML = `
+                    <div class="situation-number">Situation ${situation.id}</div>
+                    <div class="situation-title">${situation.title}</div>
+                `;
+                
+                grid.appendChild(card);
+            });
         }
     </script>
 </body>
