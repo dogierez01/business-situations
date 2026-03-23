@@ -178,6 +178,8 @@
     </div>
 
     <script>
+        console.log("Script 1: Navigation loading...");
+
         function showInstructions() {
             document.getElementById('opening-page').classList.remove('active');
             document.getElementById('instructions-page').classList.add('active');
@@ -186,8 +188,22 @@
         function enterLobby() {
             document.getElementById('instructions-page').classList.remove('active');
             document.getElementById('lobby-page').classList.add('active');
-            renderLobby();
+            
+            // Check if Script 2 survived before trying to run it
+            if (typeof renderLobby === 'function') {
+                renderLobby();
+            } else {
+                console.error("The data script crashed. Showing error message to user.");
+                document.getElementById('lobby-container').innerHTML = 
+                    "<div style='color: #dc2626; background: #fee2e2; padding: 20px; border-radius: 8px; font-weight: bold;'>" +
+                    "Error: The scenario data failed to load. Please check the Developer Console for syntax errors in the array." +
+                    "</div>";
+            }
         }
+    </script>
+
+    <script>
+        console.log("Script 2: Data loading...");
 
         const lobbyData = [
             {
@@ -336,4 +352,134 @@
                 situations: [
                     { id: 52, title: "Calling In Sick", file: "52_Company_Roles_and_Titles_Off_Calling_In_Sick.html" },
                     { id: 53, title: "HR Onboarding", file: "53_Company_Roles_and_Titles_HR_Onboarding_1.html" },
-                    { id: 54, title: "Asking for
+                    { id: 54, title: "Asking for a Raise", file: "54_Company_Roles_and_Titles_HR_Asking_for_a_Raise.html" }
+                ]
+            },
+            {
+                category: "Business Dinners and Entertainment",
+                situations: [
+                    { id: 55, title: "Entertainment", file: "55_Business_Dinners_and_Entertainment_Entertainment.html" },
+                    { id: 56, title: "Talking Business", file: "56_Business_Dinners_and_Entertainment_Talking_Business.html" },
+                    { id: 57, title: "Lunch Meeting", file: "57_Business_Dinners_and_Entertainment_Lunch_Meeting.html" },
+                    { id: 58, title: "Talking to Clients", file: "58_Business_Dinners_and_Entertainment_Talking_to_Clients.html" }
+                ]
+            },
+            {
+                category: "Training and Learning New Skills",
+                situations: [
+                    { id: 59, title: "A New Skill", file: "59_Training_and_Learning_New_Skills_A_New_Skill.html" },
+                    { id: 60, title: "Training Session", file: "60_Training_and_Learning_New_Skills_Training_Session.html" }
+                ]
+            },
+            {
+                category: "International Business & Expansion",
+                situations: [
+                    { id: 61, title: "Expansion Details 1", file: "61_International_Business_&_Expansion_Details_1.html" },
+                    { id: 62, title: "Expansion Details 2", file: "62_International_Business_&_Expansion_Details_2.html" },
+                    { id: 63, title: "Expansion Costs", file: "63_International_Business_&_Expansion_Costs.html" }
+                ]
+            },
+            {
+                category: "Job Promotions and Career Goals",
+                situations: [
+                    { id: 64, title: "Dream Job", file: "64_Job_Promotions_and_Career_Goals_Dream_Job.html" },
+                    { id: 65, title: "Asking for Promotion", file: "65_Job_Promotions_and_Career_Goals_Asking_for_Promotion.html" },
+                    { id: 66, title: "Setting Goals", file: "66_Job_Promotions_and_Career_Goals_Setting_Goals.html" }
+                ]
+            },
+            {
+                category: "Team Building and Company Culture",
+                situations: [
+                    { id: 67, title: "Culture Activity", file: "67_Team_Building_and_Company_Culture_Activity.html" },
+                    { id: 68, title: "Culture Feedback", file: "68_Team_Building_and_Company_Culture_Feedback.html" },
+                    { id: 69, title: "Culture Announcement", file: "69_Team_Building_and_Company_Culture_Announcement.html" }
+                ]
+            },
+            {
+                category: "Office Technology and Security",
+                situations: [
+                    { id: 70, title: "A Computer Issue", file: "70_Office_Technology_and_Security_A_Computer_Issue.html" },
+                    { id: 71, title: "A Leak", file: "71_Office_Technology_and_Security_A_Leak.html" },
+                    { id: 72, title: "Suspicious Email", file: "72_Office_Technology_and_Security_Suspicious_Email.html" }
+                ]
+            },
+            {
+                category: "Factory and Production",
+                situations: [
+                    { id: 73, title: "Setting up Machines", file: "73_Factory_and_Production_Setting_up_Machines.html" },
+                    { id: 74, title: "Meeting Goals", file: "74_Factory_and_Production_Meeting_Production_Goals.html" },
+                    { id: 75, title: "Ordering New Parts", file: "75_Factory_and_Production_Ordering_New_Parts.html" }
+                ]
+            },
+            {
+                category: "Event Planning and Conferences",
+                situations: [
+                    { id: 76, title: "Planning", file: "76_Event_Planning_and_Conferences_Planning.html" },
+                    { id: 77, title: "Hosting", file: "77_Event_Planning_and_Conferences_Hosting.html" },
+                    { id: 78, title: "Booking", file: "78_Event_Planning_and_Conferences_Booking.html" }
+                ]
+            },
+            {
+                category: "Designing New Products",
+                situations: [
+                    { id: 79, title: "Sending Feedback", file: "79_Designing_New_Products_Sending_Feedback.html" },
+                    { id: 80, title: "Looking at a Model", file: "80_Designing_New_Products_Looking_at_a_Model.html" },
+                    { id: 81, title: "Testing a Product", file: "81_Designing_New_Products_Testing_a_Product.html" }
+                ]
+            },
+            {
+                category: "Managing Projects",
+                situations: [
+                    { id: 82, title: "Meeting Deadlines", file: "82_Managing_Projects_Meeting_Deadlines_1.html" },
+                    { id: 83, title: "Checking the Timeline", file: "83_Managing_Projects_Checking_the_Timeline.html" },
+                    { id: 84, title: "Breaking the Production Line", file: "84_Managing_Projects_Breaking_the_Production_Line.html" }
+                ]
+            },
+            {
+                category: "Working with Lawyers and Contracts",
+                situations: [
+                    { id: 85, title: "Signing", file: "85_Working_with_Lawyers_and_Contracts_Signing.html" },
+                    { id: 86, title: "Signing 2", file: "86_Working_with_Lawyers_and_Contracts_Signing_2.html" },
+                    { id: 87, title: "Clauses", file: "87_Working_with_Lawyers_and_Contracts_Clauses.html" },
+                    { id: 88, title: "Problems", file: "88_Working_with_Lawyers_and_Contracts_Problems.html" },
+                    { id: 89, title: "Problems 2", file: "89_Working_with_Lawyers_and_Contracts_Problems_2.html" },
+                    { id: 90, title: "Signing 3", file: "90_Working_with_Lawyers_and_Contracts_Signing_3.html" }
+                ]
+            }
+        ];
+
+        function renderLobby() {
+            const container = document.getElementById('lobby-container');
+            container.innerHTML = ''; 
+
+            lobbyData.forEach(section => {
+                const details = document.createElement('details');
+                details.className = 'category-block';
+                
+                const summary = document.createElement('summary');
+                summary.innerText = section.category;
+                details.appendChild(summary);
+
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'category-content';
+
+                section.situations.forEach(situation => {
+                    const card = document.createElement('a');
+                    card.className = 'situation-card';
+                    card.href = situation.file; 
+                    
+                    card.innerHTML = `
+                        <div class="situation-number">Situation ${situation.id}</div>
+                        <div class="situation-title">${situation.title}</div>
+                    `;
+                    
+                    contentDiv.appendChild(card);
+                });
+
+                details.appendChild(contentDiv);
+                container.appendChild(details);
+            });
+        }
+    </script>
+</body>
+</html>
