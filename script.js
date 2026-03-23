@@ -34,7 +34,6 @@ function buildLobby() {
     const container = document.getElementById('lobby-container');
     container.innerHTML = ''; 
 
-    // courseData comes from data.js
     courseData.forEach(section => {
         const details = document.createElement('details');
         details.className = 'category-block';
@@ -63,7 +62,11 @@ function loadLesson(sit) {
     playerZone.classList.remove('hidden');
 
     nowPlayingTitle.innerText = `Situation ${sit.id}: ${sit.title}`;
+    
+    // Set audio source and force 1.2x playback speed!
     audioPlayer.src = sit.audioFile;
+    audioPlayer.playbackRate = 1.2; 
+    
     transcriptBox.innerHTML = sit.dialogue;
 
     attachDictionary();
