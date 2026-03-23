@@ -25,7 +25,7 @@
             text-align: center;
             padding: 40px 20px;
             width: 100%;
-            max-width: 1000px; /* Widened slightly for the grid */
+            max-width: 1000px;
             min-height: 80vh;
             box-sizing: border-box;
         }
@@ -68,48 +68,92 @@
             transform: translateY(-2px);
         }
 
-        /* --- New Grid CSS --- */
+        /* --- Accordion Category Styles --- */
         .lobby-header { margin-bottom: 30px; }
         
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+        #lobby-container {
             width: 100%;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .category-block {
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+
+        .category-block summary {
+            padding: 18px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #0f172a;
+            cursor: pointer;
+            background-color: #f1f5f9;
+            transition: background-color 0.2s;
+            list-style: none; /* Hides default arrow in some browsers */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-block summary::-webkit-details-marker {
+            display: none; /* Hides default arrow in Safari/Chrome */
+        }
+
+        .category-block summary:after {
+            content: "+"; /* Custom expand icon */
+            font-size: 1.5rem;
+            color: #2563eb;
+        }
+
+        .category-block[open] summary:after {
+            content: "−"; /* Custom collapse icon */
+        }
+
+        .category-block summary:hover {
+            background-color: #e2e8f0;
+        }
+
+        .category-content {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            background-color: #ffffff;
         }
 
         .situation-card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: left;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid #e2e8f0;
-            text-decoration: none; /* For the link */
+            background-color: #f8fafc;
+            border-radius: 6px;
+            padding: 15px;
+            text-decoration: none;
             color: inherit;
+            border: 1px solid #cbd5e1;
+            transition: transform 0.2s, border-color 0.2s;
             display: block;
         }
 
         .situation-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
             border-color: #2563eb;
+            background-color: #eff6ff;
         }
 
         .situation-number {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #64748b;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             font-weight: bold;
         }
 
         .situation-title {
-            font-size: 1.1rem;
-            font-weight: bold;
+            font-size: 1rem;
+            font-weight: 600;
             color: #1e293b;
-            line-height: 1.4;
         }
     </style>
 </head>
@@ -128,9 +172,9 @@
     <div id="lobby-page" class="page-section">
         <div class="lobby-header">
             <h2>Business Situations Lobby</h2>
-            <p>Select a scenario below to begin your lesson.</p>
+            <p>Select a category below to view the scenarios.</p>
         </div>
-        <div class="grid-container" id="grid-container"></div>
+        <div id="lobby-container"></div>
     </div>
 
     <script>
@@ -142,68 +186,134 @@
         function enterLobby() {
             document.getElementById('instructions-page').classList.remove('active');
             document.getElementById('lobby-page').classList.add('active');
-            renderLobby(); // Call the function to build the grid
+            renderLobby();
         }
 
-        // Array of your business situations (Files 55 through 90)
-        // IMPORTANT: Ensure the 'file' name matches your GitHub repo exactly!
-        const situations = [
-            { id: 55, title: "Company Roles and Titles: HR Onboarding 1", file: "55_Company_Roles_and_Titles_HR_Onboarding.html" },
-            { id: 56, title: "Company Roles and Titles: HR Onboarding 2", file: "56_Company_Roles_and_Titles_HR_Onboarding.html" },
-            { id: 57, title: "Business Dinners and Entertainment 1", file: "57_Business_Dinners_and_Entertainment.html" },
-            { id: 58, title: "Business Dinners and Entertainment 2", file: "58_Business_Dinners_and_Entertainment.html" },
-            { id: 59, title: "Business Dinners and Entertainment 3", file: "59_Business_Dinners_and_Entertainment.html" },
-            { id: 60, title: "Training and Learning New Skills 1", file: "60_Training_and_Learning_New_Skills.html" },
-            { id: 61, title: "Training and Learning New Skills 2", file: "61_Training_and_Learning_New_Skills.html" },
-            { id: 62, title: "International Business & Expansion 1", file: "62_International_Business_&_Expansion.html" },
-            { id: 63, title: "International Business & Expansion 2", file: "63_International_Business_&_Expansion.html" },
-            { id: 64, title: "Job Promotions and Career Goals 1", file: "64_Job_Promotions_and_Career_Goals.html" },
-            { id: 65, title: "Job Promotions and Career Goals 2", file: "65_Job_Promotions_and_Career_Goals.html" },
-            { id: 66, title: "Job Promotions and Career Goals 3", file: "66_Job_Promotions_and_Career_Goals.html" },
-            { id: 67, title: "Team Building and Company Culture 1", file: "67_Team_Building_and_Company_Culture.html" },
-            { id: 68, title: "Team Building and Company Culture 2", file: "68_Team_Building_and_Company_Culture.html" },
-            { id: 69, title: "Team Building and Company Culture 3", file: "69_Team_Building_and_Company_Culture.html" },
-            { id: 70, title: "Office Technology and Security 1", file: "70_Office_Technology_and_Security.html" },
-            { id: 71, title: "Office Technology and Security 2", file: "71_Office_Technology_and_Security.html" },
-            { id: 72, title: "Office Technology and Security 3", file: "72_Office_Technology_and_Security.html" },
-            { id: 73, title: "Factory and Production: Setting up 1", file: "73_Factory_and_Production_Setting_up.html" },
-            { id: 74, title: "Factory and Production: Setting up 2", file: "74_Factory_and_Production_Setting_up.html" },
-            { id: 75, title: "Factory and Production: Setting up 3", file: "75_Factory_and_Production_Setting_up.html" },
-            { id: 76, title: "Event Planning and Conferences 1", file: "76_Event_Planning_and_Conferences.html" },
-            { id: 77, title: "Event Planning and Conferences 2", file: "77_Event_Planning_and_Conferences.html" },
-            { id: 78, title: "Event Planning and Conferences 3", file: "78_Event_Planning_and_Conferences.html" },
-            { id: 79, title: "Designing New Products 1", file: "79_Designing_New_Products.html" },
-            { id: 80, title: "Designing New Products 2", file: "80_Designing_New_Products.html" },
-            { id: 81, title: "Designing New Products 3", file: "81_Designing_New_Products.html" },
-            { id: 82, title: "Managing Projects: Meeting Deadlines 1", file: "82_Managing_Projects_Meeting_Deadlines.html" },
-            { id: 83, title: "Managing Projects: Meeting Deadlines 2", file: "83_Managing_Projects_Meeting_Deadlines.html" },
-            { id: 84, title: "Managing Projects: Meeting Deadlines 3", file: "84_Managing_Projects_Meeting_Deadlines.html" },
-            { id: 85, title: "Working with Lawyers and Contracts 1", file: "85_Working_with_Lawyers_and_Contracts.html" },
-            { id: 86, title: "Working with Lawyers and Contracts 2", file: "86_Working_with_Lawyers_and_Contracts.html" },
-            { id: 87, title: "Working with Lawyers and Contracts 3", file: "87_Working_with_Lawyers_and_Contracts.html" },
-            { id: 88, title: "Working with Lawyers and Contracts 4", file: "88_Working_with_Lawyers_and_Contracts.html" },
-            { id: 89, title: "Working with Lawyers and Contracts 5", file: "89_Working_with_Lawyers_and_Contracts.html" },
-            { id: 90, title: "Working with Lawyers and Contracts 6", file: "90_Working_with_Lawyers_and_Contracts.html" }
-        ];
-
-        function renderLobby() {
-            const grid = document.getElementById('grid-container');
-            grid.innerHTML = ''; // Clear just in case
-
-            situations.forEach(situation => {
-                // We use an <a> tag so it acts like a real link to your other HTML files
-                const card = document.createElement('a');
-                card.className = 'situation-card';
-                card.href = situation.file; 
-                
-                card.innerHTML = `
-                    <div class="situation-number">Situation ${situation.id}</div>
-                    <div class="situation-title">${situation.title}</div>
-                `;
-                
-                grid.appendChild(card);
-            });
-        }
-    </script>
-</body>
-</html>
+        // The 30 Headings, perfectly mapping the 90 situations
+        const lobbyData = [
+            {
+                category: "Human Resources (HR)",
+                situations: [
+                    { id: 1, title: "Asking for a Raise", file: "01_Human_Resources_HR_Asking_for_a_Raise.html" },
+                    { id: 2, title: "The First Day on the Job", file: "02_Human_Resources_HR_The_First_Day_on_the_Job.html" }
+                ]
+            },
+            {
+                category: "Import / Export",
+                situations: [
+                    { id: 3, title: "Leaving the Company", file: "03_Import_Export_Leaving_the_Company.html" },
+                    { id: 4, title: "Problem at Customs", file: "04_Import_Export_Problem_at_Customs.html" },
+                    { id: 5, title: "Buying Materials", file: "05_Import_Export_Buying_Materials.html" }
+                ]
+            },
+            {
+                category: "Work Conflicts (Problems at Work)",
+                situations: [
+                    { id: 6, title: "Strict Boss", file: "06_Work_Conflicts_Problems_at_Work_Strict_Boss.html" },
+                    { id: 7, title: "Tardiness", file: "07_Work_Conflicts_Problems_at_Work_Tardiness.html" },
+                    { id: 8, title: "A Lazy Coworker", file: "08_Work_Conflicts_Problems_at_Work_A_Lazy_Coworker.html" }
+                ]
+            },
+            {
+                category: "Job Interviews",
+                situations: [
+                    { id: 9, title: "Sharing the Work Week", file: "09_Job_Interviews_Sharing_the_Work_Week.html" },
+                    { id: 10, title: "Meeting the Manager", file: "10_Job_Interviews_Meeting_the_Manager_in_Person.html" },
+                    { id: 11, title: "Talking about Skills", file: "11_Job_Interviews_Talking_about_Skills.html" }
+                ]
+            },
+            {
+                category: "Day-to-Day Meetings & Planning",
+                situations: [
+                    { id: 12, title: "Planning Session 1", file: "12_Day-to-Day_Meetings_A_Planning_Session_1.html" },
+                    { id: 13, title: "Planning Session 2", file: "13_Day-to-Day_Meetings_A_Planning_Session_2.html" },
+                    { id: 14, title: "Planning Session 3", file: "14_Day-to-Day_Meetings_A_Planning_Session_3.html" }
+                ]
+            },
+            {
+                category: "Sales & Client Relations",
+                situations: [
+                    { id: 15, title: "Project Deadline", file: "15_Sales_&_Client_Relations_Project_Deadline.html" },
+                    { id: 16, title: "Pending a Deal", file: "16_Sales_&_Client_Relations_Pending_a_Deal.html" },
+                    { id: 17, title: "Closing a Deal", file: "17_Sales_&_Client_Relations_Closing_a_Deal.html" }
+                ]
+            },
+            {
+                category: "Finance & Legal",
+                situations: [
+                    { id: 18, title: "Asking for a Budget Increase", file: "18_Finance_&_Legal_Asking_for_a_Budget_Increase.html" },
+                    { id: 19, title: "Contract Review", file: "19_Finance_&_Legal_Contract_Review.html" }
+                ]
+            },
+            {
+                category: "Operations & Quality Control",
+                situations: [
+                    { id: 20, title: "An Office Visit", file: "20_Operations_&_Quality_Control_An_Office_Visit.html" },
+                    { id: 21, title: "A Broken Machine", file: "21_Operations_&_Quality_Control_A_Broken_Machine.html" },
+                    { id: 22, title: "Checking Inventory", file: "22_Operations_&_Quality_Control_Checking_Inventory.html" }
+                ]
+            },
+            {
+                category: "Networking & Office Chat",
+                situations: [
+                    { id: 23, title: "Talking about the Weekend", file: "23_Networking_&_Office_Chat_Talking_about_the_Weekend.html" },
+                    { id: 24, title: "Meeting at the Cooler", file: "24_Networking_&_Office_Chat_Meeting_at_the_Cooler.html" },
+                    { id: 25, title: "Talking about Sports", file: "25_Networking_&_Office_Chat_Talking_about_Sports.html" }
+                ]
+            },
+            {
+                category: "Crisis and Big Changes",
+                situations: [
+                    { id: 26, title: "Welcoming a New Boss", file: "26_Crisis_and_Big_Changes_Welcoming_a_New_Boss.html" },
+                    { id: 27, title: "A Bad Review", file: "27_Crisis_and_Big_Changes_A_Bad_Review.html" },
+                    { id: 28, title: "Moving To a New Office", file: "28_Crisis_and_Big_Changes_Moving_To_a_New_Office.html" },
+                    { id: 29, title: "A Computer Problem", file: "29_Crisis_and_Big_Changes_A_Computer_Problem.html" }
+                ]
+            },
+            {
+                category: "Marketing and Advertising",
+                situations: [
+                    { id: 30, title: "Planning an Ad Campaign", file: "30_Marketing_and_Advertising_Planning_an_Ad_Campaign.html" },
+                    { id: 31, title: "Target Audience", file: "31_Marketing_and_Advertising_Talking_about_Target_Audience.html" }
+                ]
+            },
+            {
+                category: "Business Travel",
+                situations: [
+                    { id: 32, title: "A New Product Release", file: "32_Business_Travel_A_New_Product_Release.html" },
+                    { id: 33, title: "Booking a Flight", file: "33_Business_Travel_Booking_a_Flight.html" },
+                    { id: 34, title: "Checking Into a Hotel", file: "34_Business_Travel_Checking_Into_a_Hotel.html" }
+                ]
+            },
+            {
+                category: "Technology and Software Support",
+                situations: [
+                    { id: 35, title: "Taking a Course", file: "35_Technology_and_Software_Support_Taking_a_Course.html" },
+                    { id: 36, title: "A Network Problem", file: "36_Technology_and_Software_Support_A_Problem_with_the_Network.html" },
+                    { id: 37, title: "Learning New Software", file: "37_Technology_and_Software_Support_Learning_New_Software.html" }
+                ]
+            },
+            {
+                category: "Time Management & Deadlines",
+                situations: [
+                    { id: 38, title: "Buying Time", file: "38_Time_Management_&_Deadlines_Buying_Time.html" },
+                    { id: 39, title: "Task Delegation", file: "39_Time_Management_&_Deadlines_A_Task_Delegation.html" },
+                    { id: 40, title: "Asking for an Extension", file: "40_Time_Management_&_Deadlines_Asking_for_an_Extension.html" }
+                ]
+            },
+            {
+                category: "Office Facilities & Supplies",
+                situations: [
+                    { id: 41, title: "Ordering Supplies 1", file: "41_Office_Facilities_&_Supplies_Ordering_Office_Supplies_1.html" },
+                    { id: 42, title: "Ordering Supplies 2", file: "42_Office_Facilities_&_Supplies_Ordering_Office_Supplies_2.html" },
+                    { id: 43, title: "A Cold Office", file: "43_Office_Facilities_&_Supplies_A_Cold_Office.html" }
+                ]
+            },
+            {
+                category: "Travel Directions & Branch Offices",
+                situations: [
+                    { id: 44, title: "To the Branch", file: "44_Travel_Directions_&_Branch_Offices_To_the_Branch.html" },
+                    { id: 45, title: "Visiting the Branch", file: "45_Travel_Directions_&_Branch_Offices_Visiting_the_Branch.html" }
+                ]
+            },
+            {
