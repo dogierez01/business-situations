@@ -33,7 +33,7 @@ document.getElementById('btn-enter').addEventListener('click', () => {
 document.getElementById('btn-back-lobby').addEventListener('click', () => {
     playerZone.classList.add('hidden');
     lobbyScreen.classList.remove('hidden');
-    audioPlayer.pause();
+    audioPlayer.pause(); // Automatically pauses the audio if they leave the page early
 });
 
 // --- 1. Build the Category Grid ---
@@ -87,16 +87,17 @@ function showSituationsList(section) {
     });
 }
 
-// --- 3. Load the Player ---
+// --- 3. Load the Player (With Autoplay!) ---
 function loadLesson(sit) {
     lobbyScreen.classList.add('hidden');
     playerZone.classList.remove('hidden');
 
     nowPlayingTitle.innerText = `Situation ${sit.id}: ${sit.title}`;
     
-    // Load audio and force 1.2x speed
+    // Load audio, force 1.2x speed, and PLAY AUTOMATICALLY
     audioPlayer.src = sit.audioFile;
     audioPlayer.playbackRate = 1.2; 
+    audioPlayer.play(); 
     
     transcriptBox.innerHTML = sit.dialogue;
 
