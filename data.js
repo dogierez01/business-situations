@@ -498,4 +498,1001 @@ const courseData = [
                 `
             }
         ]
+    },{
+        category: "11. Marketing and Advertising",
+        situations: [
+            { 
+                id: 31, 
+                title: "Planning an Ad", 
+                audioFile: "31_Marketing_and_Advertising_Planning_an_Ad.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> We need a new <span class="vocab" data-tr="reklam">advertisement</span> for the internet.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Should we make a video or use a picture?</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> A short video is better for social media.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Okay. What is the main <span class="vocab" data-tr="mesaj">message</span> of the video?</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> We want to show that our service is fast.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I can write a <span class="vocab" data-tr="senaryo / metin">script</span> for a 15-second video.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> That sounds great. Please show it to me tomorrow.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I will finish it before lunch.</p>
+                `
+            },
+            { 
+                id: 32, 
+                title: "Talking about Social Media", 
+                audioFile: "32_Marketing_and_Advertising_Talking_about_Social_Media.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker 1:</span> We need more people to look at our company page.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> We should <span class="vocab" data-tr="paylaşmak">post</span> photos of our team at work.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> That is a good idea. People like seeing friendly faces.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Yes, and we can ask questions to start a <span class="vocab" data-tr="sohbet">conversation</span>.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> How many times a week should we post?</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Let's try posting three times a week on Monday, Wednesday, and Friday.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Okay. I will take some photos in the office today.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Perfect. Send them to me and I will write the text.</p>
+                `
+            },
+            { 
+                id: 33, 
+                title: "A New Product Name", 
+                audioFile: "33_Business_Travel_A_New_Product_Name.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager 1:</span> What should we call our new health drink?</p>
+                    <p class="line"><span class="speaker-B">Manager 2:</span> I think "Morning Energy" is a good name.</p>
+                    <p class="line"><span class="speaker-A">Manager 1:</span> I like it, but another company already uses that name.</p>
+                    <p class="line"><span class="speaker-B">Manager 2:</span> Oh, I see. What about "Fresh Start"?</p>
+                    <p class="line"><span class="speaker-A">Manager 1:</span> "Fresh Start" is nice and easy to <span class="vocab" data-tr="hatırlamak">remember</span>.</p>
+                    <p class="line"><span class="speaker-B">Manager 2:</span> Should we use green letters on the bottle?</p>
+                    <p class="line"><span class="speaker-A">Manager 1:</span> Yes, green makes people think of healthy things.</p>
+                    <p class="line"><span class="speaker-B">Manager 2:</span> I will tell the <span class="vocab" data-tr="tasarım">design</span> team to make a sample.</p>
+                `
+            }
+        ]
     },
+    {
+        category: "12. Business Travel",
+        situations: [
+            { 
+                id: 34, 
+                title: "Booking a Flight", 
+                audioFile: "34_Business_Travel_Booking_a_Flight.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker:</span> I need to fly to London next week for the big meeting.</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> Do you want to leave on Monday morning or Sunday night?</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> Monday morning is better. I don't want to fly on the weekend.</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> Okay. I found a direct <span class="vocab" data-tr="uçuş">flight</span> at 8:00 AM.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> That is perfect. Which airline is it?</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> It is British Airways. You will <span class="vocab" data-tr="varmak">arrive</span> at 10:00 AM.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> Great. Please <span class="vocab" data-tr="yer ayırtmak">book</span> the ticket and choose a window seat for me.</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> I just bought it. I will email the ticket to you now.</p>
+                `
+            },
+            { 
+                id: 35, 
+                title: "Checking into a Hotel", 
+                audioFile: "35_Business_Travel_Checking_into_a_Hotel.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Clerk:</span> Welcome to the Grand Hotel. How can I help you?</p>
+                    <p class="line"><span class="speaker-B">Guest:</span> Hello, I have a <span class="vocab" data-tr="rezervasyon">reservation</span> for three nights. My name is Lee.</p>
+                    <p class="line"><span class="speaker-A">Clerk:</span> Let me check the computer. Yes, Mr. Lee, a single room.</p>
+                    <p class="line"><span class="speaker-B">Guest:</span> Can I get a room on a high floor, please?</p>
+                    <p class="line"><span class="speaker-A">Clerk:</span> Let me see. Yes, I can put you on the 10th floor.</p>
+                    <p class="line"><span class="speaker-B">Guest:</span> Thank you. What time is <span class="vocab" data-tr="kahvaltı">breakfast</span> in the morning?</p>
+                    <p class="line"><span class="speaker-A">Clerk:</span> Breakfast is from 6:30 to 9:30 in the restaurant.</p>
+                    <p class="line"><span class="speaker-B">Guest:</span> Perfect. I will need an alarm call at 6:00, please.</p>
+                `
+            },
+            { 
+                id: 36, 
+                title: "Taking a Taxi", 
+                audioFile: "36_Technology_and_Software_Support_Taking_a_Taxi.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Driver:</span> Good morning! Where are we going today?</p>
+                    <p class="line"><span class="speaker-B">Passenger:</span> Good morning. Please take me to the train station.</p>
+                    <p class="line"><span class="speaker-A">Driver:</span> The <span class="vocab" data-tr="trafik">traffic</span> is very bad right now. Are you in a hurry?</p>
+                    <p class="line"><span class="speaker-B">Passenger:</span> Yes, my train leaves in forty minutes.</p>
+                    <p class="line"><span class="speaker-A">Driver:</span> I will take a different road to <span class="vocab" data-tr="kaçınmak">avoid</span> the traffic.</p>
+                    <p class="line"><span class="speaker-B">Passenger:</span> Thank you. How much will it cost?</p>
+                    <p class="line"><span class="speaker-A">Driver:</span> It will be about twenty dollars.</p>
+                    <p class="line"><span class="speaker-B">Passenger:</span> That is fine. Here is the money. Please keep the <span class="vocab" data-tr="para üstü">change</span>.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "13. Technology and Software Support",
+        situations: [
+            { 
+                id: 37, 
+                title: "A Forgotten Password", 
+                audioFile: "37_Technology_and_Software_Support_A_Forgotten_Password.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">IT Worker:</span> IT Help Desk, this is Sarah speaking.</p>
+                    <p class="line"><span class="speaker-B">User:</span> Hi Sarah, I can't open my email. I forgot my <span class="vocab" data-tr="şifre">password</span>.</p>
+                    <p class="line"><span class="speaker-A">IT Worker:</span> I can help with that. What is your employee number?</p>
+                    <p class="line"><span class="speaker-B">User:</span> My number is 4-5-8-2.</p>
+                    <p class="line"><span class="speaker-A">IT Worker:</span> Thank you. I am sending a secret code to your phone now.</p>
+                    <p class="line"><span class="speaker-B">User:</span> Okay, I got a text message with the code.</p>
+                    <p class="line"><span class="speaker-A">IT Worker:</span> Please type that code into the computer to make a new password.</p>
+                    <p class="line"><span class="speaker-B">User:</span> It worked! Thank you very much for your help.</p>
+                `
+            },
+            { 
+                id: 38, 
+                title: "Learning a New Program", 
+                audioFile: "38_Technology_and_Software_Support_Learning_a_New_Program.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Did you use the new sales <span class="vocab" data-tr="yazılım">software</span> yet?</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Yes, I tried it yesterday, but it is difficult.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> I think it is faster than the old program.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Maybe, but I don't know how to find my old customers.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> You have to click the star <span class="vocab" data-tr="simge">icon</span> on the left side.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Oh, I see it now! That is very easy.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> There is a training video on the company website, too.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> I will watch it this afternoon. Thanks for the <span class="vocab" data-tr="ipucu">tip</span>.</p>
+                `
+            },
+            { 
+                id: 39, 
+                title: "Buying New Equipment", 
+                audioFile: "39_Time_Management_&_Deadlines_Buying_New_Equipment.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Boss:</span> Our computers are very slow. We need to buy new ones.</p>
+                    <p class="line"><span class="speaker-B">IT Worker:</span> I agree. The design team needs faster machines.</p>
+                    <p class="line"><span class="speaker-A">Boss:</span> Can you find three good options and show me the prices?</p>
+                    <p class="line"><span class="speaker-B">IT Worker:</span> Yes. Do you prefer laptops or desktop computers?</p>
+                    <p class="line"><span class="speaker-A">Boss:</span> Let's buy laptops. People can take them to meetings.</p>
+                    <p class="line"><span class="speaker-B">IT Worker:</span> Good idea. I will send you a list of prices by tomorrow.</p>
+                    <p class="line"><span class="speaker-A">Boss:</span> Please make sure they have a lot of <span class="vocab" data-tr="hafıza">memory</span>.</p>
+                    <p class="line"><span class="speaker-B">IT Worker:</span> Of course. I will choose the best models for our work.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "14. Time Management & Deadlines",
+        situations: [
+            { 
+                id: 40, 
+                title: "A Fast Deadline", 
+                audioFile: "40_Time_Management_&_Deadlines_A_Fast_Deadline.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> We need to finish the new project by Friday.</p>
+                    <p class="line"><span class="speaker-B">Developer:</span> Friday? That is very soon. I hadn't finished the code yet.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> I know, but the client wants to see it before the weekend.</p>
+                    <p class="line"><span class="speaker-B">Developer:</span> Okay. I'll need to work late tonight and tomorrow.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Thank you. I'll buy you dinner if you stay late.</p>
+                    <p class="line"><span class="speaker-B">Developer:</span> That sounds good. I'd like a large salad, please.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> No problem at all. I'll <span class="vocab" data-tr="sipariş vermek">order</span> food for you.</p>
+                    <p class="line"><span class="speaker-B">Developer:</span> Perfect. Let's get back to work now.</p>
+                `
+            },
+            { 
+                id: 41, 
+                title: "Asking for More Time", 
+                audioFile: "41_Time_Management_&_Deadlines_Asking_for_More_Time.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> Did you finish the monthly sales report?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> No, I haven't. I need a little more time, please.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> When will it be ready? The boss is asking for it.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I can give it to you tomorrow morning at nine o'clock.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Why is it <span class="vocab" data-tr="geç kalmış">late</span> this month?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> The computer system was broken yesterday afternoon.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> I understand. Please don't be late tomorrow morning.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I <span class="vocab" data-tr="söz vermek">promise</span> it'll be on your desk first thing.</p>
+                `
+            },
+            { 
+                id: 42, 
+                title: "Scheduling a Meeting", 
+                audioFile: "42_Office_Facilities_&_Supplies_Scheduling_a_Meeting.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker 1:</span> We need to have a meeting about the new project.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Sure. When are you <span class="vocab" data-tr="müsait">free</span> to talk?</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> I'm free on Wednesday afternoon at two o'clock.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> I have another meeting then. How about Thursday?</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Thursday morning works for me. Is ten o'clock okay?</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Yes, ten is great. Should I <span class="vocab" data-tr="davet etmek">invite</span> the marketing team?</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Yes, please ask them to join us.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> I'll send everyone an email invitation right now.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "15. Office Facilities & Supplies",
+        situations: [
+            { 
+                id: 43, 
+                title: "Ordering Office Supplies", 
+                audioFile: "43_Office_Facilities_&_Supplies_Ordering_Office_Supplies.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker 1:</span> We don't have any more printer paper in the office.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Oh no. I'll order some more today.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> We also need some new blue pens and sticky notes.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> I'll add them to the list. Do we need anything else?</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Yes, the kitchen is out of coffee beans.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> That is a big <span class="vocab" data-tr="acil durum">emergency</span>! I'll order coffee right away.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> When will the <span class="vocab" data-tr="teslimat">delivery</span> arrive?</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> It usually takes two days. We'll have it by Wednesday.</p>
+                `
+            },
+            { 
+                id: 44, 
+                title: "A Cold Office", 
+                audioFile: "44_Office_Facilities_&_Supplies_A_Cold_Office.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker 1:</span> It's very cold in the office today.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> I agree. I can't feel my fingers while I'm typing.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Can we turn on the heating?</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> I tried, but the <span class="vocab" data-tr="ısıtıcı">heater</span> isn't working.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> We should call the building manager.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> I already called him. He is coming in ten minutes.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Good. I hope he <span class="vocab" data-tr="tamir etmek">fixes</span> it fast.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Me too. I'll wear my coat until then.</p>
+                `
+            },
+            { 
+                id: 45, 
+                title: "Reserving a Room", 
+                audioFile: "45_Travel_Directions_&_Branch_Offices_Reserving_a_Room.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker:</span> I need a quiet room for a phone call at three o'clock.</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> Let me check the schedule. Room A is empty.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> Is that the room with the big television?</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> Yes, it is. Do you need to use the television?</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> No, I only need a phone and a quiet space.</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> Okay. I'll write your name down for Room A at three.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> Thank you. How long can I use it?</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> You can have it for one full <span class="vocab" data-tr="saat">hour</span>.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "16. Travel Directions & Branch Offices",
+        situations: [
+            { 
+                id: 46, 
+                title: "Traveling to a New Office", 
+                audioFile: "46_Travel_Directions_&_Branch_Offices_Traveling_to_a_New_Office.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> Are you ready for your business <span class="vocab" data-tr="gezi / seyahat">trip</span> next week?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Yes, I am. I'm visiting our new branch office.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> That is exciting. How are you getting there?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I'm taking a flight first, and then I'll rent a car.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Drive safely. The roads there can be busy.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I will. I have a good map on my phone.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Take some photos of the new office for us.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I definitely will. I'll send them to the team chat.</p>
+                `
+            },
+            { 
+                id: 47, 
+                title: "Asking for Directions", 
+                audioFile: "47_Travel_Directions_&_Branch_Offices_Asking_for_Directions.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Visitor:</span> Excuse me, how do I get to the Coach Station from here?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Walk <span class="vocab" data-tr="düz">straight</span> down this street for five minutes.</p>
+                    <p class="line"><span class="speaker-A">Visitor:</span> Okay, straight down this street. Then what?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Stop when you see the big bank at the Crossroads.</p>
+                    <p class="line"><span class="speaker-A">Visitor:</span> The bank at the Crossroads. Got it.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Turn left there, and the Coach Station is on your right.</p>
+                    <p class="line"><span class="speaker-A">Visitor:</span> Thank you so much for your help.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> You're welcome. Have a safe trip!</p>
+                `
+            },
+            { 
+                id: 48, 
+                title: "Meeting a Client", 
+                audioFile: "48_Presentations_and_Public_Speaking_Meeting_a_Client.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Host:</span> Welcome to the city! Did you find our office easily?</p>
+                    <p class="line"><span class="speaker-B">Client:</span> Yes, the taxi driver knew exactly where to go.</p>
+                    <p class="line"><span class="speaker-A">Host:</span> Great. Would you like to get some lunch before we start?</p>
+                    <p class="line"><span class="speaker-B">Client:</span> That is a lovely idea. I'm quite hungry.</p>
+                    <p class="line"><span class="speaker-A">Host:</span> There's a nice restaurant near here. They have great food.</p>
+                    <p class="line"><span class="speaker-B">Client:</span> That is perfect for me.</p>
+                    <p class="line"><span class="speaker-A">Host:</span> Excellent. We can talk about the new contract while we eat.</p>
+                    <p class="line"><span class="speaker-B">Client:</span> Sounds like a great plan. Let's go.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "17. Presentations and Public Speaking",
+        situations: [
+            { 
+                id: 49, 
+                title: "Preparing a Presentation", 
+                audioFile: "49_Presentations_and_Public_Speaking_Preparing_a_Presentation.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Are you ready for your <span class="vocab" data-tr="sunum">presentation</span> tomorrow?</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Not yet. I hadn't finished the final slide about our products.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Do you need help finding the right pictures?</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Yes, please. Can you find some good photos of the factory?</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> I'll look in the company folder right now.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Thank you. I want to show that we have many employees.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> That is a great idea. It shows that our company is growing.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Yes, the new <span class="vocab" data-tr="müşteriler">clients</span> will like to see that.</p>
+                `
+            },
+            { 
+                id: 50, 
+                title: "Starting a Talk", 
+                audioFile: "50_Presentations_and_Public_Speaking_Starting_a_Talk.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Good morning, everyone. Thank you for coming today.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> We are excited to hear about the new sales plan.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Before we start, please turn off your mobile phones.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> No problem. Will we have a short break for coffee?</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Yes, we will stop for fifteen minutes at ten o'clock.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Perfect. Do we have paper to take <span class="vocab" data-tr="notlar">notes</span>?</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Yes, there are notebooks and pens on your desks.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Thank you. We are ready to listen now.</p>
+                `
+            },
+            { 
+                id: 51, 
+                title: "Answering Questions", 
+                audioFile: "51_Customer_Support_and_Problems_Answering_Questions.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Speaker A:</span> That is the end of my presentation. Do you have any questions?</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Yes. How much will the new software cost?</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> It will cost five hundred dollars every month.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> That is quite expensive for our small budget.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> It is, but it will save us a lot of time and work.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Does it work on our old office <span class="vocab" data-tr="ekipman">equipment</span>?</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Yes, it does. You don't need to buy new equipment.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> That is good news. Thank you for explaining.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "18. Customer Support and Problems",
+        situations: [
+            { 
+                id: 52, 
+                title: "Missing Bags at the Airport", 
+                audioFile: "52_Customer_Support_and_Problems_Missing_Bags_at_the_Airport.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Excuse me, I can't find my suitcase from the flight.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> I can help you. You need to go to the lost <span class="vocab" data-tr="bagaj">luggage</span> claim.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Where is that, please?</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> It is next to the exit doors, on the left side.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Thank you. I hadn't seen it when I walked past.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Do you have your baggage <span class="vocab" data-tr="bilet / etiket">ticket</span> with you?</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Yes, it is right here on my phone.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Show that to the staff there, and they will find your bag.</p>
+                `
+            },
+            { 
+                id: 53, 
+                title: "A Broken Product", 
+                audioFile: "53_Customer_Support_and_Problems_A_Broken_Product.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Hello, I bought a camera here yesterday, but it doesn't work.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> I am sorry to hear that. What is the problem with it?</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> The screen is completely black. It won't turn on.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Let me look at it. Oh, I see. The battery space is <span class="vocab" data-tr="hasarlı">damaged</span>.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Can I get a new camera, please?</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Yes, of course. We will <span class="vocab" data-tr="değiştirmek">replace</span> it right away.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Thank you very much. I need it for my class.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Here is a brand new one. Have a great day.</p>
+                `
+            },
+            { 
+                id: 54, 
+                title: "Calling for Help", 
+                audioFile: "54_Company_Rules_and_Time_Off_Calling_for_Help.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Thank you for calling Tech Support. How can I help?</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> My internet is very slow today. I can't send my emails.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Let me check your <span class="vocab" data-tr="bağlantı">connection</span>. What is your account number?</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> It is 8-9-3-4-1.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Thank you. I see a small problem in your neighborhood.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> When will it be fixed? I have a lot of work to do.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Our team is working on it. It will be fast again in an hour.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Okay, I will wait. Thank you for checking.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "19. Company Rules and Time Off",
+        situations: [
+            { 
+                id: 55, 
+                title: "Checking the Contract", 
+                audioFile: "55_Company_Rules_and_Time_Off_Checking_the_Contract.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Have you sent the new contract to the customer yet?</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> No, the law department is still reading it.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Why is it taking so long? We need to sign it today.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> They found a mistake on page four and have to fix it.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> What kind of mistake did they find?</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> They hadn't included the new shipping rules.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Oh, that is very important. Tell them to hurry, please.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> I will call them right now and ask for an update.</p>
+                `
+            },
+            { 
+                id: 56, 
+                title: "Asking for a Holiday", 
+                audioFile: "56_Company_Rules_and_Time_Off_Asking_for_a_Holiday.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Boss, can I take a week off next month?</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Let me check the calendar. When do you want to go?</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> I want to travel with my family.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> That sounds wonderful. Is it the second week of the month?</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Yes, from Monday to Friday.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> That is fine. We don't have any big meetings that week.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Thank you so much! I'll fill out the <span class="vocab" data-tr="tatil">holiday</span> form now.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Have a great trip. Send us some photos!</p>
+                `
+            },
+            { 
+                id: 57, 
+                title: "Safety Rules", 
+                audioFile: "57_Business_Dinners_and_Entertainment_Safety_Rules.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Remember, everyone must wear a hard hat in the factory.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Even if we are just walking through for a minute?</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Yes. It is a strict rule for your own <span class="vocab" data-tr="güvenlik">safety</span>.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> I understand. Where can I find a hard hat?</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> There is a box of yellow hats next to the main door.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> Okay. I hadn't noticed them before.</p>
+                    <p class="line"><span class="speaker-A">Speaker A:</span> Please put one on before you go inside the workspace.</p>
+                    <p class="line"><span class="speaker-B">Speaker B:</span> I will do that right now. Thank you for reminding me.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "20. Business Dinners and Entertainment",
+        situations: [
+            { 
+                id: 58, 
+                title: "Ordering Food", 
+                audioFile: "58_Business_Dinners_and_Entertainment_Ordering_Food.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Host:</span> This restaurant is very nice. What will you eat?</p>
+                    <p class="line"><span class="speaker-B">Guest:</span> I will have the steak with a large salad.</p>
+                    <p class="line"><span class="speaker-A">Host:</span> That sounds healthy. I will order the grilled chicken.</p>
+                    <p class="line"><span class="speaker-B">Guest:</span> Excellent choice. The food here always smells wonderful.</p>
+                    <p class="line"><span class="speaker-A">Host:</span> Do you want to share some water for the table?</p>
+                    <p class="line"><span class="speaker-B">Guest:</span> Yes, sparkling water, please.</p>
+                    <p class="line"><span class="speaker-A">Host:</span> Great. I will call the <span class="vocab" data-tr="garson">waiter</span> over now.</p>
+                    <p class="line"><span class="speaker-B">Guest:</span> Thank you. I am very hungry after our long meeting.</p>
+                `
+            },
+            { 
+                id: 59, 
+                title: "Talking about Hobbies", 
+                audioFile: "59_Business_Dinners_and_Entertainment_Talking_about_Hobbies.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Coworker A:</span> What do you like to do on the weekends?</p>
+                    <p class="line"><span class="speaker-B">Coworker B:</span> I like listening to music. I have a collection of old records.</p>
+                    <p class="line"><span class="speaker-A">Coworker A:</span> That is interesting. What kind of music do you like?</p>
+                    <p class="line"><span class="speaker-B">Coworker B:</span> I love old classic rock and jazz.</p>
+                    <p class="line"><span class="speaker-A">Coworker A:</span> I haven't heard much jazz. I like to watch sports.</p>
+                    <p class="line"><span class="speaker-B">Coworker B:</span> Me too. I am a big fan of football.</p>
+                    <p class="line"><span class="speaker-A">Coworker A:</span> Maybe we can go to a game next time I visit the city.</p>
+                    <p class="line"><span class="speaker-B">Coworker B:</span> I would love that. Let's <span class="vocab" data-tr="planlamak">plan</span> it for next month.</p>
+                `
+            },
+            { 
+                id: 60, 
+                title: "Talking about Family", 
+                audioFile: "60_Business_Dinners_and_Entertainment_Talking_about_Family.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> Do you have a large family?</p>
+                    <p class="line"><span class="speaker-B">Employee:</span> I live with my wife, our young son, and our dog.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Oh, what kind of dog do you have?</p>
+                    <p class="line"><span class="speaker-B">Employee:</span> He is a toy poodle. He is three years old and very small.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Dogs are great for children. Does your son play with him?</p>
+                    <p class="line"><span class="speaker-B">Employee:</span> Yes, they play in the park every day.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> That is wonderful. It is nice to <span class="vocab" data-tr="dinlenmek">relax</span> after work.</p>
+                    <p class="line"><span class="speaker-B">Employee:</span> It really is. Family time is the most important thing.</p>
+                `
+            }
+        ]
+    },{
+        category: "21. Training and Learning New Skills",
+        situations: [
+            { 
+                id: 61, 
+                title: "A New Language App", 
+                audioFile: "61_Training_and_Learning_New_Skills_A_New_Language_App.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> We need our sales team to learn a new language.</p>
+                    <p class="line"><span class="speaker-B">Trainer:</span> I agree. It will help us talk to our new international clients.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> I found a great app on my phone. It teaches <span class="vocab" data-tr="kelime bilgisi">vocabulary</span>.</p>
+                    <p class="line"><span class="speaker-B">Trainer:</span> Does it teach difficult things like grammar?</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Yes, it explains everything very clearly with pictures.</p>
+                    <p class="line"><span class="speaker-B">Trainer:</span> That is perfect. Can you send the <span class="vocab" data-tr="bağlantı / link">link</span> to the team?</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> I will send it right now. They can use it for ten minutes a day.</p>
+                    <p class="line"><span class="speaker-B">Trainer:</span> Thank you. Learning a new language is always <span class="vocab" data-tr="faydalı">useful</span>.</p>
+                `
+            },
+            { 
+                id: 62, 
+                title: "Improving Production", 
+                audioFile: "62_Training_and_Learning_New_Skills_Improving_Production.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Boss:</span> We need to help the factory workers learn the new machines faster.</p>
+                    <p class="line"><span class="speaker-B">Supervisor:</span> You are right. I hadn't thought about that before.</p>
+                    <p class="line"><span class="speaker-A">Boss:</span> Can we make a simple <span class="vocab" data-tr="kılavuz / rehber">guide</span> for them to read?</p>
+                    <p class="line"><span class="speaker-B">Supervisor:</span> I can make a short document with clear pictures.</p>
+                    <p class="line"><span class="speaker-A">Boss:</span> That is a very <span class="vocab" data-tr="yardımcı">helpful</span> idea.</p>
+                    <p class="line"><span class="speaker-B">Supervisor:</span> Yes, pictures are easy to understand for everyone.</p>
+                    <p class="line"><span class="speaker-A">Boss:</span> Please make a <span class="vocab" data-tr="taslak">draft</span> by next week and show it to me.</p>
+                    <p class="line"><span class="speaker-B">Supervisor:</span> I will start making it today.</p>
+                `
+            },
+            { 
+                id: 63, 
+                title: "Taking a Class", 
+                audioFile: "63_International_Business_&_Expansion_Taking_a_Class.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker:</span> I want to get better at using the accounting software.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> There is an online <span class="vocab" data-tr="ders / sınıf">class</span> you can take for that.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> Really? Does the company pay for the class?</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> Yes, if you pass the final test, we will pay for it.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> That is wonderful. How long does the class take?</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> It takes about four weeks to finish all the <span class="vocab" data-tr="dersler">lessons</span>.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> I will sign up for it this weekend.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> Good luck! It will be very helpful for your daily tasks.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "22. International Business & Expansion",
+        situations: [
+            { 
+                id: 64, 
+                title: "Opening a New Office", 
+                audioFile: "64_International_Business_&_Expansion_Opening_a_New_Office.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Director:</span> Our company is growing. We need a new office in Europe.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> Where should we open the new <span class="vocab" data-tr="şube">branch</span>?</p>
+                    <p class="line"><span class="speaker-A">Director:</span> I think we should look at cities with good transportation.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> That is a good idea. Are the living costs good there?</p>
+                    <p class="line"><span class="speaker-A">Director:</span> Yes, we need a place that is <span class="vocab" data-tr="uygun fiyatlı">affordable</span> for our staff.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> We will need to get visas for the managers who move there.</p>
+                    <p class="line"><span class="speaker-A">Director:</span> The legal team is already preparing the visa documents.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> Excellent. Let's plan a <span class="vocab" data-tr="ziyaret">visit</span> there next spring.</p>
+                `
+            },
+            { 
+                id: 65, 
+                title: "Exporting Goods", 
+                audioFile: "65_International_Business_&_Expansion_Exporting_Goods.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Leader:</span> How many countries do we sell our products to now?</p>
+                    <p class="line"><span class="speaker-B">Sales Head:</span> We currently <span class="vocab" data-tr="ihraç etmek">export</span> our materials to many countries.</p>
+                    <p class="line"><span class="speaker-A">Leader:</span> That is a great number. Can we add more countries this year?</p>
+                    <p class="line"><span class="speaker-B">Sales Head:</span> Yes, but we need to hire more people for the team.</p>
+                    <p class="line"><span class="speaker-A">Leader:</span> Let's talk to HR about finding three new export managers.</p>
+                    <p class="line"><span class="speaker-B">Sales Head:</span> I will write the job <span class="vocab" data-tr="tanım">description</span> this afternoon.</p>
+                    <p class="line"><span class="speaker-A">Leader:</span> Make sure they have a lot of experience with international shipping.</p>
+                    <p class="line"><span class="speaker-B">Sales Head:</span> I will definitely include that in the <span class="vocab" data-tr="gereksinimler">requirements</span>.</p>
+                `
+            },
+            { 
+                id: 66, 
+                title: "Brand History", 
+                audioFile: "66_Job_Promotions_and_Career_Goals_Brand_History.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Marketer 1:</span> We want something with a good history for our new bath product.</p>
+                    <p class="line"><span class="speaker-B">Marketer 2:</span> Like how the Iacusi family named their product?</p>
+                    <p class="line"><span class="speaker-A">Marketer 1:</span> Yes! It was <span class="vocab" data-tr="yanlış yazılmış">misspelled</span> during immigration, but it's a great story.</p>
+                    <p class="line"><span class="speaker-B">Marketer 2:</span> Exactly. A strong history helps build a better <span class="vocab" data-tr="marka">brand</span>.</p>
+                    <p class="line"><span class="speaker-A">Marketer 1:</span> Let's ask the team to look for interesting historical words.</p>
+                    <p class="line"><span class="speaker-B">Marketer 2:</span> I will send them an email right away.</p>
+                    <p class="line"><span class="speaker-A">Marketer 1:</span> Good. We need a name that people will <span class="vocab" data-tr="hatırlamak">remember</span>.</p>
+                    <p class="line"><span class="speaker-B">Marketer 2:</span> I completely agree.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "23. Job Promotions and Career Goals",
+        situations: [
+            { 
+                id: 67, 
+                title: "Asking for a Promotion", 
+                audioFile: "67_Job_Promotions_and_Career_Goals_Asking_for_a_Promotion.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker:</span> I would like to talk about my future in the company.</p>
+                    <p class="line"><span class="speaker-B">Boss:</span> Of course. You are doing a great job on the sales team.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> Thank you. I want to become a team leader next year.</p>
+                    <p class="line"><span class="speaker-B">Boss:</span> That is a good <span class="vocab" data-tr="hedef">goal</span>. What new skills do you need to learn?</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> I need to learn more about <span class="vocab" data-tr="eğitim">training</span> new workers.</p>
+                    <p class="line"><span class="speaker-B">Boss:</span> We have a management class you can take in the summer.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> That would be perfect. How do I sign up for it?</p>
+                    <p class="line"><span class="speaker-B">Boss:</span> I will send you the <span class="vocab" data-tr="kayıt">registration</span> form tomorrow morning.</p>
+                `
+            },
+            { 
+                id: 68, 
+                title: "Getting a New Job Title", 
+                audioFile: "68_Job_Promotions_and_Career_Goals_Getting_a_New_Job_Title.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> I have some very good news for you today.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Really? What is the good news?</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> We are giving you the <span class="vocab" data-tr="unvan / başlık">title</span> of Senior Designer.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Wow, thank you! I am so happy to hear that.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> You <span class="vocab" data-tr="hak etmek">earned</span> it. Your work is always very creative and fast.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Will I have different tasks now?</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Yes, you will help check the work of the junior designers.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I am ready for the new <span class="vocab" data-tr="meydan okuma">challenge</span>.</p>
+                `
+            },
+            { 
+                id: 69, 
+                title: "A Performance Review", 
+                audioFile: "69_Team_Building_and_Company_Culture_A_Performance_Review.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Boss:</span> Let's talk about your work this past year.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Okay. I finished all my projects on time.</p>
+                    <p class="line"><span class="speaker-A">Boss:</span> Yes, you did. But your <span class="vocab" data-tr="iletişim">communication</span> with the team needs work.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I know. Sometimes I forget to reply to emails quickly.</p>
+                    <p class="line"><span class="speaker-A">Boss:</span> Please try to <span class="vocab" data-tr="cevaplamak">answer</span> all emails within one day.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I will do that. I will check my inbox every morning.</p>
+                    <p class="line"><span class="speaker-A">Boss:</span> Good. Everything else is excellent. Keep it up.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Thank you for your honest <span class="vocab" data-tr="geri bildirim">feedback</span>.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "24. Team Building and Company Culture",
+        situations: [
+            { 
+                id: 70, 
+                title: "Planning a Team Lunch", 
+                audioFile: "70_Team_Building_and_Company_Culture_Planning_a_Team_Lunch.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker 1:</span> We should have a team lunch this Friday.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> That is a great idea. Where should we go eat?</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> There is a new Italian restaurant near the park.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Do they have <span class="vocab" data-tr="vejetaryen">vegetarian</span> food for Sarah?</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Yes, they have very good salads and vegetable soup.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Perfect. What time should we make the reservation?</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Let's go at 12:30. I will call them to book a table now.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Please <span class="vocab" data-tr="davet etmek">invite</span> the whole department in the group chat.</p>
+                `
+            },
+            { 
+                id: 71, 
+                title: "Welcoming a New Employee", 
+                audioFile: "71_Team_Building_and_Company_Culture_Welcoming_a_New_Employee.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Hello, you must be the new <span class="vocab" data-tr="muhasebeci">accountant</span>.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Yes, I am. My name is Robert. Nice to meet you.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> I am Jane. Welcome to the finance team!</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Thank you. Everyone is very friendly here.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> We try to help each other. Do you want a <span class="vocab" data-tr="tur / gezi">tour</span> of the office?</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Yes, please. I don't know where the coffee machine is.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> It is in the kitchen down the <span class="vocab" data-tr="koridor">hall</span>. Let's go.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Great. I really need a big cup of coffee this morning.</p>
+                `
+            },
+            { 
+                id: 72, 
+                title: "A Company Party", 
+                audioFile: "72_Office_Technology_and_Security_A_Company_Party.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Are you going to the winter <span class="vocab" data-tr="parti">party</span> next week?</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Yes, I am. Are we allowed to bring our families?</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Yes, husbands, wives, and children are welcome.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> That is nice. Will there be music and dancing?</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Yes, they <span class="vocab" data-tr="kiralamak">hired</span> a DJ and ordered a lot of food.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Do I need to wear a suit and tie?</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> No, it is a <span class="vocab" data-tr="günlük / rahat">casual</span> party. Just wear something comfortable.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> Sounds fun. I will see you there!</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "25. Office Technology and Security",
+        situations: [
+            { 
+                id: 73, 
+                title: "A Locked Account", 
+                audioFile: "73_Office_Technology_and_Security_A_Locked_Account.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker:</span> I typed my password wrong three times. Now I am <span class="vocab" data-tr="kilitli">locked</span> out.</p>
+                    <p class="line"><span class="speaker-B">IT Support:</span> Don't worry, I can unlock your account for you.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> Thank you. I always forget my new passwords.</p>
+                    <p class="line"><span class="speaker-B">IT Support:</span> You should use a password manager app to remember them.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> Is that <span class="vocab" data-tr="güvenli">safe</span>? What if someone hacks the app?</p>
+                    <p class="line"><span class="speaker-B">IT Support:</span> It is very safe. The company uses a special business <span class="vocab" data-tr="sürüm">version</span>.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> Okay, can you install it on my computer today?</p>
+                    <p class="line"><span class="speaker-B">IT Support:</span> Yes, I will do it as soon as your account is open.</p>
+                `
+            },
+            { 
+                id: 74, 
+                title: "Suspicious Emails", 
+                audioFile: "74_Office_Technology_and_Security_Suspicious_Emails.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker:</span> I got a strange email asking for my bank <span class="vocab" data-tr="detaylar">details</span>.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> Do not click any links in that email!</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> I didn't click anything. It looks like it is from our boss.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> It is a <span class="vocab" data-tr="hile / numara">trick</span>. It is called a phishing email.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> What should I do with it?</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> Send it to the IT security team, and then delete it.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> I will do that right now. It looked very <span class="vocab" data-tr="gerçek">real</span>.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> Always check the sender's address very carefully.</p>
+                `
+            },
+            { 
+                id: 75, 
+                title: "Losing an ID Badge", 
+                audioFile: "75_Factory_and_Production_Losing_an_ID_Badge.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker:</span> I can't find my office ID <span class="vocab" data-tr="yaka kartı">badge</span> anywhere.</p>
+                    <p class="line"><span class="speaker-B">Security Guard:</span> When did you last see it?</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> I had it yesterday when I left the building at five o'clock.</p>
+                    <p class="line"><span class="speaker-B">Security Guard:</span> I will check the lost and found box for you.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> Thank you. I hope it is there.</p>
+                    <p class="line"><span class="speaker-B">Security Guard:</span> It is not here. We need to print a new one for you.</p>
+                    <p class="line"><span class="speaker-A">Worker:</span> Do I have to pay for a new badge?</p>
+                    <p class="line"><span class="speaker-B">Security Guard:</span> No, the first <span class="vocab" data-tr="değişim">replacement</span> is free. Stand here for a photo.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "26. Factory and Production",
+        situations: [
+            { 
+                id: 76, 
+                title: "Meeting Production Goals", 
+                audioFile: "76_Factory_and_Production_Meeting_Production_Goals.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> How many parts did we make today?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> We made one thousand parts this morning.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> That is good, but we need two thousand by tonight.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> We can work faster after the lunch break.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Please make sure the machines are running well.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I checked them an hour ago. They are fine.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Great. Let me know when we hit the <span class="vocab" data-tr="hedef">target</span>.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I will send you a message at five o'clock.</p>
+                `
+            },
+            { 
+                id: 77, 
+                title: "Ordering Raw Materials", 
+                audioFile: "77_Factory_and_Production_Ordering_Raw_Materials.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Worker 1:</span> We are running out of <span class="vocab" data-tr="malzemeler">materials</span> for the machines.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> How much do we have left?</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Only enough for two more days of work.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> I will call the supplier and ask for a fast delivery.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Can they send it by tomorrow morning?</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> I hope so. I will ask them to put it on the first <span class="vocab" data-tr="kamyon">truck</span>.</p>
+                    <p class="line"><span class="speaker-A">Worker 1:</span> Let me know if we need to pay extra for that.</p>
+                    <p class="line"><span class="speaker-B">Worker 2:</span> I will check the price and call you back.</p>
+                `
+            },
+            { 
+                id: 78, 
+                title: "Factory Safety", 
+                audioFile: "78_Event_Planning_and_Conferences_Factory_Safety.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> Please remember to wear your <span class="vocab" data-tr="güvenlik">safety</span> glasses.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Oh, I forgot them on my desk. I'm sorry.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> You cannot be on the factory floor without them.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I will go back and get them right now.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Thank you. We want everyone to be safe here.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I understand. I won't <span class="vocab" data-tr="unutmak">forget</span> them again.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Also, make sure your shoes are closed at the front.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Yes, these are my special heavy work shoes.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "27. Event Planning and Conferences",
+        situations: [
+            { 
+                id: 79, 
+                title: "Booking a Place", 
+                audioFile: "79_Event_Planning_and_Conferences_Booking_a_Place.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Planner 1:</span> We need a big room for the company meeting next month.</p>
+                    <p class="line"><span class="speaker-B">Planner 2:</span> How many people are coming to the meeting?</p>
+                    <p class="line"><span class="speaker-A">Planner 1:</span> About one hundred people from different offices.</p>
+                    <p class="line"><span class="speaker-B">Planner 2:</span> The hotel downtown has a very nice <span class="vocab" data-tr="konferans">conference</span> room.</p>
+                    <p class="line"><span class="speaker-A">Planner 1:</span> Does it have a screen for our presentations?</p>
+                    <p class="line"><span class="speaker-B">Planner 2:</span> Yes, it has a big screen and a good sound system.</p>
+                    <p class="line"><span class="speaker-A">Planner 1:</span> Can you call them and ask about the <span class="vocab" data-tr="fiyat">price</span>?</p>
+                    <p class="line"><span class="speaker-B">Planner 2:</span> I will call them right now and ask for a discount.</p>
+                `
+            },
+            { 
+                id: 80, 
+                title: "Planning the Food", 
+                audioFile: "80_Event_Planning_and_Conferences_Planning_the_Food.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Planner 1:</span> What kind of food should we <span class="vocab" data-tr="servis yapmak">serve</span> at the conference?</p>
+                    <p class="line"><span class="speaker-B">Planner 2:</span> We should have coffee and tea in the morning.</p>
+                    <p class="line"><span class="speaker-A">Planner 1:</span> And what about lunch for the guests?</p>
+                    <p class="line"><span class="speaker-B">Planner 2:</span> We can order sandwiches and some fresh fruit.</p>
+                    <p class="line"><span class="speaker-A">Planner 1:</span> Make sure we have some vegetarian <span class="vocab" data-tr="seçenekler">options</span>, too.</p>
+                    <p class="line"><span class="speaker-B">Planner 2:</span> I will tell the catering company to bring plenty of salads.</p>
+                    <p class="line"><span class="speaker-A">Planner 1:</span> Perfect. We want everyone to have a good <span class="vocab" data-tr="öğün / yemek">meal</span>.</p>
+                    <p class="line"><span class="speaker-B">Planner 2:</span> I will send you the menu choices tomorrow.</p>
+                `
+            },
+            { 
+                id: 81, 
+                title: "Sending Invitations", 
+                audioFile: "81_Designing_New_Products_Sending_Invitations.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> Did you send the emails for the big event?</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> Yes, I sent them to all the managers yesterday.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Have people started to <span class="vocab" data-tr="cevap vermek">answer</span> yet?</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> Fifty people said yes, they will come.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> That is a good start. We need to know by next Friday.</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> I will send a reminder email on Wednesday.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Please add the <span class="vocab" data-tr="program">schedule</span> to the reminder email.</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> I will make a nice PDF document with all the times.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "28. Designing New Products",
+        situations: [
+            { 
+                id: 82, 
+                title: "Looking at a New Design", 
+                audioFile: "82_Designing_New_Products_Looking_at_a_New_Design.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Designer 1:</span> Here is the first <span class="vocab" data-tr="çizim">drawing</span> of the new coffee cup.</p>
+                    <p class="line"><span class="speaker-B">Designer 2:</span> I like the shape, but the handle is too small.</p>
+                    <p class="line"><span class="speaker-A">Designer 1:</span> I can make the handle bigger so it is easy to hold.</p>
+                    <p class="line"><span class="speaker-B">Designer 2:</span> Yes, please do that. And what colors will we use?</p>
+                    <p class="line"><span class="speaker-A">Designer 1:</span> I thought we could make it in blue and green.</p>
+                    <p class="line"><span class="speaker-B">Designer 2:</span> Green is nice. It makes people think of <span class="vocab" data-tr="doğa">nature</span>.</p>
+                    <p class="line"><span class="speaker-A">Designer 1:</span> I will change the drawing and show you again.</p>
+                    <p class="line"><span class="speaker-B">Designer 2:</span> I look forward to seeing the new <span class="vocab" data-tr="versiyon / sürüm">version</span>.</p>
+                `
+            },
+            { 
+                id: 83, 
+                title: "Testing a Prototype", 
+                audioFile: "83_Designing_New_Products_Testing_a_Prototype.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Creator:</span> We made the first <span class="vocab" data-tr="örnek / numune">sample</span> of the new office chair.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> It looks very modern. Is it comfortable to sit on?</p>
+                    <p class="line"><span class="speaker-A">Creator:</span> Please sit down and tell me what you think.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> The back is nice, but the seat is a little hard.</p>
+                    <p class="line"><span class="speaker-A">Creator:</span> We can add more soft <span class="vocab" data-tr="malzeme">material</span> to the seat.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> That would be better. How much does it cost to make?</p>
+                    <p class="line"><span class="speaker-A">Creator:</span> It is cheap to make, so we can sell it for a good price.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> Great work. Let's fix the seat and start making more.</p>
+                `
+            },
+            { 
+                id: 84, 
+                title: "Reading Customer Feedback", 
+                audioFile: "84_Managing_Projects_Reading_Customer_Feedback.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> What do the customers think of our new product?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Most people like it, but some say it is too <span class="vocab" data-tr="ağır">heavy</span>.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Can we use a lighter material for the next ones?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Yes, our <span class="vocab" data-tr="mühendisler">engineers</span> are looking for new materials now.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> We need to listen to the customers so they keep buying.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I agree. I will write a report with all their <span class="vocab" data-tr="yorumlar">comments</span>.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Send the report to the design team this afternoon.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I will email it to everyone before I leave today.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "29. Managing Projects",
+        situations: [
+            { 
+                id: 85, 
+                title: "Checking the Timeline", 
+                audioFile: "85_Managing_Projects_Checking_the_Timeline.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> Are we on time with the new website project?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> We are a little <span class="vocab" data-tr="geride">behind</span>. The pictures are not ready.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> When will the photographer send the pictures?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> He said he will send them on Wednesday morning.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> That is too late. The website opens on Thursday.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I will call him and tell him it is an <span class="vocab" data-tr="acil durum">emergency</span>.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Please do. We cannot delay the opening day.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I will do my best to get them today.</p>
+                `
+            },
+            { 
+                id: 86, 
+                title: "Dividing the Work", 
+                audioFile: "86_Managing_Projects_Dividing_the_Work.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> There is a lot of work for this new client.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> We need to <span class="vocab" data-tr="bölmek / paylaştırmak">divide</span> the tasks between the team.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Who is going to write the text for the brochure?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Sarah is the best writer. She can do that part.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Okay, and who will design the front <span class="vocab" data-tr="kapak">cover</span>?</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> Mark is a great artist. I will ask him to draw it.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> That sounds like a good plan. Tell them to start now.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I will hold a quick meeting with them in five minutes.</p>
+                `
+            },
+            { 
+                id: 87, 
+                title: "Budget Updates", 
+                audioFile: "87_Working_with_Lawyers_and_Contracts_Budget_Updates.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Boss:</span> How much money have we spent on the project so far?</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> We have spent half of the <span class="vocab" data-tr="bütçe">budget</span> in the first month.</p>
+                    <p class="line"><span class="speaker-A">Boss:</span> That is okay, we are halfway finished with the work.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> But we still need to pay for the online advertisements.</p>
+                    <p class="line"><span class="speaker-A">Boss:</span> We have enough money left for the ads. Don't worry.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> I just want to be <span class="vocab" data-tr="dikkatli">careful</span> so we don't spend too much.</p>
+                    <p class="line"><span class="speaker-A">Boss:</span> Keep a close eye on the numbers every week.</p>
+                    <p class="line"><span class="speaker-B">Manager:</span> I have an Excel sheet that <span class="vocab" data-tr="takip etmek">tracks</span> every dollar we spend.</p>
+                `
+            }
+        ]
+    },
+    {
+        category: "30. Working with Lawyers and Contracts",
+        situations: [
+            { 
+                id: 88, 
+                title: "Reviewing Terms", 
+                audioFile: "88_Working_with_Lawyers_and_Contracts_Reviewing_Terms.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> Have you sent the audio files to the <span class="vocab" data-tr="avukat">lawyer</span> yet?</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> No, I hadn't finished renaming them for the folder.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Please make sure the audio files are named "law".</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> Got it. I will change the names so they say "law" instead of "legal".</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> They need to <span class="vocab" data-tr="gözden geçirmek">review</span> everything before we sign the contract.</p>
+                    <p class="line"><span class="speaker-B">Assistant:</span> I will send the files to them right away.</p>
+                `
+            },
+            { 
+                id: 89, 
+                title: "Keeping a Secret", 
+                audioFile: "89_Working_with_Lawyers_and_Contracts_Keeping_a_Secret.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Lawyer:</span> Before we tell you our idea, you must sign this paper.</p>
+                    <p class="line"><span class="speaker-B">Visitor:</span> What kind of paper is this?</p>
+                    <p class="line"><span class="speaker-A">Lawyer:</span> It is a secret <span class="vocab" data-tr="anlaşma">agreement</span>. You cannot tell anyone our plans.</p>
+                    <p class="line"><span class="speaker-B">Visitor:</span> I understand. Many companies ask for this.</p>
+                    <p class="line"><span class="speaker-A">Lawyer:</span> Please read it carefully and sign at the bottom.</p>
+                    <p class="line"><span class="speaker-B">Visitor:</span> The <span class="vocab" data-tr="kurallar">rules</span> are clear. I will sign it now.</p>
+                    <p class="line"><span class="speaker-A">Lawyer:</span> Thank you. Now we can show you the new product.</p>
+                    <p class="line"><span class="speaker-B">Visitor:</span> I am very excited to see what you are building.</p>
+                `
+            },
+            { 
+                id: 90, 
+                title: "Protecting the Brand", 
+                audioFile: "90_Working_with_Lawyers_and_Contracts_Protecting_the_Brand.m4a",
+                dialogue: `
+                    <p class="line"><span class="speaker-A">Manager:</span> Another company is using our logo on their website.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> That is not <span class="vocab" data-tr="izinli">allowed</span>. It is our official logo.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> We need our lawyer to send them a letter.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> The letter should tell them to stop using it <span class="vocab" data-tr="derhal">immediately</span>.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Yes, we worked hard to design that logo.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I will call the lawyer and explain the <span class="vocab" data-tr="durum">situation</span>.</p>
+                    <p class="line"><span class="speaker-A">Manager:</span> Ask him how long it will take to fix this problem.</p>
+                    <p class="line"><span class="speaker-B">Worker:</span> I will let you know as soon as I speak with him.</p>
+                `
+            }
+        ]
+    }
+];
