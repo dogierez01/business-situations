@@ -1,0 +1,81 @@
+/* Dark Mode & Neon Aesthetic */
+:root {
+    --bg-color: #0b0f19;
+    --text-main: #ffffff;
+    --neon-yellow: #ccff00;
+    --dark-panel: #1e293b;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex; flex-direction: column; align-items: center;
+    min-height: 100vh;
+}
+
+.screen {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 40px 20px;
+    width: 100%; box-sizing: border-box; min-height: 100vh;
+}
+
+.hidden { display: none !important; }
+
+img { max-width: 100%; max-height: 40vh; object-fit: contain; margin-bottom: 30px; }
+
+/* Buttons */
+.action-btn-large {
+    background-color: transparent;
+    color: var(--neon-yellow);
+    border: 2px solid var(--neon-yellow);
+    padding: 15px 40px; font-size: 1.2rem; font-weight: bold;
+    border-radius: 8px; cursor: pointer; transition: 0.2s;
+    width: 100%; max-width: 400px; display: block; margin: 0 auto;
+}
+.action-btn-large:hover { background-color: var(--neon-yellow); color: var(--bg-color); }
+
+/* Headers */
+#app-title { color: var(--neon-yellow); font-size: 36px; margin-bottom: 30px; text-align: center; }
+#now-playing-title { color: var(--neon-yellow); font-size: 28px; margin-bottom: 20px; line-height: 1.3; text-align: left;}
+
+/* Lobby Categories (Dark Mode Accordions) */
+.category-block { margin-bottom: 15px; border: 1px solid #334155; border-radius: 8px; overflow: hidden; }
+.category-block summary { 
+    padding: 18px; font-size: 1.1rem; font-weight: bold; cursor: pointer; 
+    background: var(--dark-panel); list-style: none; color: var(--neon-yellow);
+    border-left: 4px solid var(--neon-yellow); text-align: left;
+}
+.category-block summary::-webkit-details-marker { display: none; }
+.category-content { padding: 15px; background-color: #0f172a; display: flex; flex-direction: column; gap: 10px;}
+
+/* Lobby Items */
+.lobby-item {
+    background: transparent; border: 1px solid #475569; color: white;
+    padding: 12px 15px; text-align: left; border-radius: 6px; cursor: pointer;
+    font-size: 1rem; transition: 0.2s;
+}
+.lobby-item:hover { border-color: var(--neon-yellow); color: var(--neon-yellow); }
+
+/* Dialogue Box */
+.dialogue-box {
+    background: var(--dark-panel); padding: 30px; border-radius: 12px;
+    border: 1px solid #334155; text-align: left; margin-top: 20px;
+    font-size: 1.15rem; line-height: 1.6;
+}
+.speaker-A { color: var(--neon-yellow); font-weight: bold; }
+.speaker-B { color: #38bdf8; font-weight: bold; }
+
+/* Interactive Dictionary */
+.vocab { color: #fbbf24; border-bottom: 1px dashed #fbbf24; cursor: pointer; font-weight: bold; }
+.vocab:hover { background-color: rgba(251, 191, 36, 0.2); }
+
+#translation-popup {
+    position: absolute; background: #ffffff; color: #000000; padding: 8px 12px;
+    border-radius: 6px; font-size: 1rem; pointer-events: none; opacity: 0;
+    transition: 0.2s; transform: translateY(10px); z-index: 1000; font-weight: bold;
+    box-shadow: 0 4px 15px rgba(204, 255, 0, 0.3);
+}
+#translation-popup.visible { opacity: 1; transform: translateY(0); }
+.tr-color { color: #dc2626; margin-left: 5px; }
