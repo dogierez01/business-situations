@@ -1,38 +1,40 @@
 // Screen Elements
 const splashScreen = document.getElementById('splash-screen');
 const instructionsScreen = document.getElementById('instructions-screen');
+const mainApp = document.getElementById('main-app');
 const lobbyScreen = document.getElementById('lobby-screen');
 const playerZone = document.getElementById('player-zone');
 
 // Player Elements
 const audioPlayer = document.getElementById('audio-player');
-const lessonTitle = document.getElementById('lesson-title');
+const nowPlayingTitle = document.getElementById('now-playing-title');
 const transcriptBox = document.getElementById('transcript-box');
 const popup = document.getElementById('translation-popup');
 
-// --- Navigation Logic ---
+// --- Navigation ---
 document.getElementById('btn-start').addEventListener('click', () => {
-    splashScreen.classList.remove('active');
-    instructionsScreen.classList.add('active');
+    splashScreen.classList.add('hidden');
+    instructionsScreen.classList.remove('hidden');
 });
 
 document.getElementById('btn-enter').addEventListener('click', () => {
-    instructionsScreen.classList.remove('active');
-    lobbyScreen.classList.add('active');
+    instructionsScreen.classList.add('hidden');
+    mainApp.classList.remove('hidden');
     buildLobby();
 });
 
-document.getElementById('btn-back').addEventListener('click', () => {
-    playerZone.classList.remove('active');
-    lobbyScreen.classList.add('active');
-    audioPlayer.pause(); // Stop audio when leaving
+document.getElementById('btn-back-lobby').addEventListener('click', () => {
+    playerZone.classList.add('hidden');
+    lobbyScreen.classList.remove('hidden');
+    audioPlayer.pause();
 });
 
-// --- Build the Lobby ---
+// --- Build Lobby ---
 function buildLobby() {
     const container = document.getElementById('lobby-container');
     container.innerHTML = ''; 
 
+    // courseData comes from data.js
     courseData.forEach(section => {
         const details = document.createElement('details');
         details.className = 'category-block';
@@ -42,13 +44,12 @@ function buildLobby() {
         contentDiv.className = 'category-content';
 
         section.situations.forEach(sit => {
-            const card = document.createElement('div');
-            card.className = 'situation-card';
-            card.innerHTML = `<strong>Situation ${sit.id}</strong><br>${sit.title}`;
+            const btn = document.createElement('button');
+            btn.className = 'lobby-item';
+            btn.innerText = `Situation ${sit.id}: ${sit.title}`;
             
-            // When a card is clicked, load the data into the Player Zone
-            card.addEventListener('click', () => loadLesson(sit));
-            contentDiv.appendChild(card);
+            btn.addEventListener('click', () => loadLesson(sit));
+            contentDiv.appendChild(btn);
         });
 
         details.appendChild(contentDiv);
@@ -56,22 +57,19 @@ function buildLobby() {
     });
 }
 
-// --- Load the Lesson ---
-function loadLesson(situationData) {
-    // Switch screens
-    lobbyScreen.classList.remove('active');
-    playerZone.classList.add('active');
+// --- Load Lesson ---
+function loadLesson(sit) {
+    lobbyScreen.classList.add('hidden');
+    playerZone.classList.remove('hidden');
 
-    // Inject the specific data
-    lessonTitle.innerText = `Situation ${situationData.id}: ${situationData.title}`;
-    audioPlayer.src = situationData.audioFile;
-    transcriptBox.innerHTML = situationData.dialogue;
+    nowPlayingTitle.innerText = `Situation ${sit.id}: ${sit.title}`;
+    audioPlayer.src = sit.audioFile;
+    transcriptBox.innerHTML = sit.dialogue;
 
-    // Attach dictionary clicks to the newly loaded text
     attachDictionary();
 }
 
-// --- Interactive Dictionary Logic ---
+// --- Interactive Dictionary ---
 function attachDictionary() {
     const vocabWords = document.querySelectorAll('.vocab');
     
@@ -84,13 +82,12 @@ function attachDictionary() {
             popup.innerHTML = `${eng} <span class="tr-color">= ${tr}</span>`;
             
             const rect = e.target.getBoundingClientRect();
-            popup.style.top = `${rect.top + window.scrollY - popup.offsetHeight - 5}px`;
+            popup.style.top = `${rect.top + window.scrollY - popup.offsetHeight - 10}px`;
             popup.style.left = `${rect.left + window.scrollX}px`;
             popup.classList.add('visible');
         });
     });
 }
 
-// Hide popup when clicking elsewhere or scrolling
 document.addEventListener('click', () => popup.classList.remove('visible'));
 document.addEventListener('scroll', () => popup.classList.remove('visible'));
