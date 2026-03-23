@@ -3,71 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Situations Lobby</title>
+    <title>Business Situations</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #f8fafc;
+            color: #1e293b;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
         }
 
-        /* --- Opening Page Styles --- */
-        #opening-page {
-            display: flex;
+        /* This controls the display of our different "screens" */
+        .page-section {
+            display: none; /* Hides everything by default */
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 40px 20px;
+            width: 100%;
             max-width: 800px;
-            margin-top: 5vh;
+            min-height: 80vh;
+        }
+
+        /* The active class makes the current screen visible */
+        .active {
+            display: flex;
         }
 
         .logo {
-            max-width: 200px;
+            max-width: 250px;
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         .instructions {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
         }
 
-        .btn-enter {
-            background-color: #0056b3;
+        .btn-main {
+            background-color: #2563eb;
             color: white;
             border: none;
-            padding: 15px 40px;
+            padding: 15px 50px;
             font-size: 1.2rem;
-            border-radius: 5px;
+            font-weight: bold;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.1s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .btn-enter:hover {
-            background-color: #004494;
+        .btn-main:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
         }
+
+        .btn-main:active {
+            transform: translateY(0);
+        }
+        
+        /* Basic Lobby Styles for our next step */
+        .lobby-header { margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
-    <div id="opening-page">
+    <div id="opening-page" class="page-section active">
         <img src="logo.png" alt="App Logo" class="logo">
-        
-        <img src="instructions.jpg" alt="How to use this app" class="instructions">
-        
-        <button class="btn-enter" onclick="alert('Lobby transition coming next!')">Enter Lobby</button>
+        <button class="btn-main" onclick="showInstructions()">Go</button>
     </div>
 
+    <div id="instructions-page" class="page-section">
+        <img src="instructions.jpg" alt="How to use this app" class="instructions">
+        <button class="btn-main" onclick="enterLobby()">Go to Lobby</button>
+    </div>
+
+    <div id="lobby-page" class="page-section">
+        <div class="lobby-header">
+            <h2>Business Situations Lobby</h2>
+            <p>Select a scenario below.</p>
+        </div>
+        <div id="grid-container"></div>
+    </div>
+
+    <script>
+        function showInstructions() {
+            // Hide the opening page
+            document.getElementById('opening-page').classList.remove('active');
+            // Show the instructions page
+            document.getElementById('instructions-page').classList.add('active');
+        }
+
+        function enterLobby() {
+            // Hide the instructions page
+            document.getElementById('instructions-page').classList.remove('active');
+            // Show the lobby page
+            document.getElementById('lobby-page').classList.add('active');
+            
+            // Temporary alert so you know the button works before we build the grid
+            alert('Lobby transition successful! Ready to build the grid.');
+        }
+    </script>
 </body>
 </html>
